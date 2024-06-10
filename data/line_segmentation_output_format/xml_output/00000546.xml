@@ -1,0 +1,456 @@
+<?xml version="1.0" ?>
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15/pagecontent.xsd">
+  <Metadata>
+    <Creator>Google Books</Creator>
+    <Created>2024-06-10T11:08:30.326+00:00</Created>
+    <LastChanged>2024-06-10T12:16:37.109+00:00</LastChanged>
+  </Metadata>
+  <Page imageFilename="00000546.jpg_2000x700.jpg">
+    <ReadingOrder>
+      <OrderedGroup id="1234_0" caption="Regions reading order">
+        <RegionRefIndexed index="0" regionRef="region_main"/>
+      </OrderedGroup>
+    </ReadingOrder>
+    <TextRegion id="region_main" custom="readingOrder {index:0;} structure {type:paragraph;}">
+      <Coords points="79,24 79,336 1893,336 1893,24"/>
+      <TextLine id="b8d7e87f-02dd-44b9-bc99-43143a126982" custom="readingOrder {index: 0;}">
+        <Coords points="57,62 57,71 78,71 78,62"/>
+        <TextEquiv>
+          <Unicode>526</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="0ec82778-be5b-422a-ae9e-27a9cbc781de" custom="readingOrder {index: 1;}">
+        <Coords points="146,60 146,79 345,79 345,60"/>
+        <TextEquiv>
+          <Unicode>འཛམ་གླིང་ཚོང་དོན་ཚོགས་པའི་སྐོར་གྱི་གཞི་རྩའི་ཤེས་བྱ།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="2b504f39-db0e-43d4-b2e5-98fdce254d4d" custom="readingOrder {index: 2;}">
+        <Coords points="302,99 302,119 443,119 443,99"/>
+        <TextEquiv>
+          <Unicode>དངུལ་ལོཪ་ ཆ་ བགོས་འཐེན་ ཉར་ ལམ་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="ce216d90-ffff-424d-889b-c59e2599d902" custom="readingOrder {index: 3;}">
+        <Coords points="302,120 302,132 328,132 328,120"/>
+        <TextEquiv>
+          <Unicode>ལུགས།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="03d390aa-f876-4bf6-9112-c4931bac7bd0" custom="readingOrder {index: 4;}">
+        <Coords points="303,140 303,157 412,157 412,140"/>
+        <TextEquiv>
+          <Unicode>ད་སྤྱོད་ཚོང་རར་ཞུགས་ཆོག་པ།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="8bfa173c-b773-41f4-8085-15030f5e9fb2" custom="readingOrder {index: 5;}">
+        <Coords points="304,162 304,180 440,180 440,162"/>
+        <TextEquiv>
+          <Unicode>(ཞིང་ལས་ལ་རྒྱལ་ནང་གི་རྒྱབ་སྐྱོར་)</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="bb6cc6cc-7026-4b47-96ba-83913c856240" custom="readingOrder {index: 6;}">
+        <Coords points="303,179 303,196 442,196 442,179"/>
+        <TextEquiv>
+          <Unicode>ད་ སྤྱོད་ ཕྱོགས་ བསྡུས་ རྒྱབ་ སྐྱོར་ བྱེད་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="726f60cd-7d31-4e91-8869-2b4d1c38f738" custom="readingOrder {index: 7;}">
+        <Coords points="46,109 46,119 167,119 167,109"/>
+        <TextEquiv>
+          <Unicode>Currency retention scheme</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="f1b3277b-9c0b-4202-82a3-6726989cf1b6" custom="readingOrder {index: 8;}">
+        <Coords points="184,109 184,119 251,119 251,109"/>
+        <TextEquiv>
+          <Unicode>货币留成制度</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="2d99ff44-2f25-4616-8e1f-9166fb321317" custom="readingOrder {index: 9;}">
+        <Coords points="46,132 46,142 128,142 128,132"/>
+        <TextEquiv>
+          <Unicode>Current market </Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="84bcb28c-1dc4-4cfe-95c4-48942d37bce1" custom="readingOrder {index: 10;}">
+        <Coords points="47,147 47,157 79,157 79,147"/>
+        <TextEquiv>
+          <Unicode>(CMA)</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="516b269e-560d-4582-84fa-e979bc41eec5" custom="readingOrder {index: 11;}">
+        <Coords points="143,137 143,142 169,142 169,137"/>
+        <TextEquiv>
+          <Unicode>access</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="936f1631-af1b-4081-b4b3-c3f6267aa00d" custom="readingOrder {index: 12;}">
+        <Coords points="184,141 184,151 251,151 251,141"/>
+        <TextEquiv>
+          <Unicode>现行市场准入</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="3f3b29a2-b243-4868-9d7f-1097251c95dd" custom="readingOrder {index: 13;}">
+        <Coords points="185,172 185,184 286,184 286,172"/>
+        <TextEquiv>
+          <Unicode>**Eh*ORG</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="935a68be-2205-4922-9bb3-f946a292fa59" custom="readingOrder {index: 14;}">
+        <Coords points="45,179 45,188 130,188 130,179"/>
+        <TextEquiv>
+          <Unicode>Current total AMS</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="26c3877c-461d-4ca5-b2c7-215650520265" custom="readingOrder {index: 15;}">
+        <Coords points="184,187 184,198 250,198 250,187"/>
+        <TextEquiv>
+          <Unicode>綜合支持总量</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="57784852-aa45-4489-b5ae-d69bc677146e" custom="readingOrder {index: 16;}">
+        <Coords points="45,218 45,228 110,228 110,218"/>
+        <TextEquiv>
+          <Unicode>Customs value</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="e6f10236-9639-49bf-89b4-29fd8c5c7ea5" custom="readingOrder {index: 17;}">
+        <Coords points="184,219 184,228 250,228 250,219"/>
+        <TextEquiv>
+          <Unicode>海关完税价值</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="b55f448f-473e-4f57-ba53-0a0b1c415cec" custom="readingOrder {index: 18;}">
+        <Coords points="303,231 303,241 321,241 321,231"/>
+        <TextEquiv>
+          <Unicode>ཐང་།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="1632bc66-8477-4b3f-901b-b0c3d369fe5e" custom="readingOrder {index: 19;}">
+        <Coords points="44,250 44,258 126,258 126,250"/>
+        <TextEquiv>
+          <Unicode>Customs valuation</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="193841f5-fe76-4f5d-93d6-cf4be3227b44" custom="readingOrder {index: 20;}">
+        <Coords points="183,250 183,260 227,260 227,250"/>
+        <TextEquiv>
+          <Unicode>海关估价</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="c0687675-96b2-4078-a4c5-37eefc14089a" custom="readingOrder {index: 21;}">
+        <Coords points="44,280 44,291 110,291 110,280"/>
+        <TextEquiv>
+          <Unicode>Customs union</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="6ec9e39a-7a11-4e9e-ba31-1a96583962e7" custom="readingOrder {index: 22;}">
+        <Coords points="183,282 183,292 227,292 227,282"/>
+        <TextEquiv>
+          <Unicode>关税同盟</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="5f8cc418-a822-48d2-9990-05c6710f7b0b" custom="readingOrder {index: 23;}">
+        <Coords points="300,197 300,210 327,210 327,197"/>
+        <TextEquiv>
+          <Unicode>འབོར།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="918a90a1-8a8f-4498-992a-3e8f95b6cf2d" custom="readingOrder {index: 24;}">
+        <Coords points="302,209 302,228 409,228 409,209"/>
+        <TextEquiv>
+          <Unicode>འགག་ སྒོའི་ ཁྲལ་ འཇལ་ རྗེས་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="42a38007-b979-4f5a-8e05-0fd3a4f99f2a" custom="readingOrder {index: 25;}">
+        <Coords points="389,209 389,231 441,231 441,209"/>
+        <TextEquiv>
+          <Unicode>” རྗེས་ ཀྱི་ རིན་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="706fee16-9dcf-429b-967a-c4fd0ee67e2d" custom="readingOrder {index: 26;}">
+        <Coords points="302,251 302,267 408,267 408,251"/>
+        <TextEquiv>
+          <Unicode>འགག་སྒོའི་རིན་གོང་ཚོད་རྩིས།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="d355f67e-95f3-41f3-8860-a2fa73c3f12e" custom="readingOrder {index: 27;}">
+        <Coords points="302,283 302,298 376,298 376,283"/>
+        <TextEquiv>
+          <Unicode>སྒོ་ཁྲལ་མནའ་མཐུན།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="47ae734a-8bb9-4c44-936f-00834a64c645" custom="readingOrder {index: 28;}">
+        <Coords points="44,345 44,353 96,353 96,345"/>
+        <TextEquiv>
+          <Unicode>de minimis</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="1f8c8e1d-8477-4502-bb40-50e049f9f8bf" custom="readingOrder {index: 29;}">
+        <Coords points="43,375 43,386 129,386 129,375"/>
+        <TextEquiv>
+          <Unicode>Developed member</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="21cf060b-320e-4fd8-b053-bd1f60fc1e9e" custom="readingOrder {index: 30;}">
+        <Coords points="182,376 182,386 223,386 223,376"/>
+        <TextEquiv>
+          <Unicode>发达成员</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="9e50fa85-058a-4dd3-aa73-3db1917ce911" custom="readingOrder {index: 31;}">
+        <Coords points="42,407 42,418 131,418 131,407"/>
+        <TextEquiv>
+          <Unicode>Developing member</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="f8ac370f-bda9-42c0-97ad-f6d1e5e64cad" custom="readingOrder {index: 32;}">
+        <Coords points="181,408 181,418 236,418 236,408"/>
+        <TextEquiv>
+          <Unicode>发展中成员</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="f00260fd-e4f2-4c58-a2a5-92f791107026" custom="readingOrder {index: 33;}">
+        <Coords points="41,438 41,453 112,453 112,438"/>
+        <TextEquiv>
+          <Unicode>Direct payment</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="d353fdb9-a1f2-48e2-934b-e7b5d90800eb" custom="readingOrder {index: 34;}">
+        <Coords points="41,469 41,481 133,481 133,469"/>
+        <TextEquiv>
+          <Unicode>Distribution services</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="6d68a96f-95d9-4a9d-b253-ec31eebc529c" custom="readingOrder {index: 35;}">
+        <Coords points="181,471 181,480 224,480 224,471"/>
+        <TextEquiv>
+          <Unicode>分销服务</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="c1db9800-7848-493c-b21b-5d78ab444ac6" custom="readingOrder {index: 36;}">
+        <Coords points="181,345 181,354 203,354 203,345"/>
+        <TextEquiv>
+          <Unicode>微量</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="523de0e8-ba2f-47d4-b547-a5693ad53b3c" custom="readingOrder {index: 37;}">
+        <Coords points="230,313 230,325 247,325 247,313"/>
+        <TextEquiv>
+          <Unicode>-D</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="2e7a147c-b555-42c2-8436-43c65d714c0e" custom="readingOrder {index: 38;}">
+        <Coords points="187,431 187,445 273,445 273,431"/>
+        <TextEquiv>
+          <Unicode>&amp;EPH&amp;#)H</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="3a925922-d5ec-406e-ba9b-54cacfd1fa29" custom="readingOrder {index: 39;}">
+        <Coords points="301,345 301,360 353,360 353,345"/>
+        <TextEquiv>
+          <Unicode>ཕྲ་ཞིང་ཉུང་བ།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="86e97c63-cca9-40bd-9302-4106852219ae" custom="readingOrder {index: 40;}">
+        <Coords points="301,377 301,392 431,392 431,377"/>
+        <TextEquiv>
+          <Unicode>དར་རྒྱས་ཆེ་བའི་ཁོངས་ཞུགས་ཕྱོགས།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="c25b2985-dce7-4b86-9891-28d8885be8b0" custom="readingOrder {index: 41;}">
+        <Coords points="300,398 300,411 324,411 324,398"/>
+        <TextEquiv>
+          <Unicode>འཕེམ་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="35f35e45-18ca-478e-b533-15dad97e7e8b" custom="readingOrder {index: 42;}">
+        <Coords points="323,399 323,417 441,417 441,399"/>
+        <TextEquiv>
+          <Unicode>་ རྒྱས་ འགྲོ་ བཞིན་ པའི་ ཁོངས་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="f39c3868-3340-4159-ab78-3417de126bdc" custom="readingOrder {index: 43;}">
+        <Coords points="298,417 298,432 351,432 351,417"/>
+        <TextEquiv>
+          <Unicode>ཞུགས་ཕྱོགས།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="12e60938-432d-43cc-8277-4717a115cca0" custom="readingOrder {index: 44;}">
+        <Coords points="301,430 301,450 436,450 436,430"/>
+        <TextEquiv>
+          <Unicode>( ཞིང་ལས་ལ་རྒྱལ་ནང་གི་རྒྱབ་སྐྱོར་)</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="5d25b7d1-e824-4ef0-bc50-fb6892e5ac24" custom="readingOrder {index: 45;}">
+        <Coords points="299,448 299,464 375,464 375,448"/>
+        <TextEquiv>
+          <Unicode>ཐད་ཀར་གཏོང་སྤྲོད།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="ee59ce76-df88-4171-9c29-a60555b2a432" custom="readingOrder {index: 46;}">
+        <Coords points="300,471 300,488 415,488 415,471"/>
+        <TextEquiv>
+          <Unicode>ཁག་བགོས་བྲིན་ཚོང་གི་ཞབས་ཞུ།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="102172f5-22d2-4b68-b755-da59ae66004c" custom="readingOrder {index: 47;}">
+        <Coords points="41,500 41,513 123,513 123,500"/>
+        <TextEquiv>
+          <Unicode>Domestic industry</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="9adc60b5-2a74-48ba-96d2-cbfd554cc774" custom="readingOrder {index: 48;}">
+        <Coords points="181,503 181,513 224,513 224,503"/>
+        <TextEquiv>
+          <Unicode>国内产业</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="2454558e-d5b0-42ab-8c3e-de09812d284f" custom="readingOrder {index: 49;}">
+        <Coords points="300,504 300,518 366,518 366,504"/>
+        <TextEquiv>
+          <Unicode>རྒྱལ་ནང་ཐོན་ལས།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="a9628e1f-27cc-47bf-a12e-c4cdc059e7b0" custom="readingOrder {index: 50;}">
+        <Coords points="41,532 41,546 134,546 134,532"/>
+        <TextEquiv>
+          <Unicode>Domestic production</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="c14d37b4-d3c2-4a84-98e9-b90f01df4a4d" custom="readingOrder {index: 51;}">
+        <Coords points="181,534 181,545 224,545 224,534"/>
+        <TextEquiv>
+          <Unicode>国内生产</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="b71197eb-9d38-45d4-bb78-c3780e72635b" custom="readingOrder {index: 52;}">
+        <Coords points="299,535 299,550 365,550 365,535"/>
+        <TextEquiv>
+          <Unicode>རྒྱལ་ནང་ཐོན་སྐྱེད།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="fdead355-2110-43ff-a927-06812cfe5280" custom="readingOrder {index: 53;}">
+        <Coords points="40,563 40,577 163,577 163,563"/>
+        <TextEquiv>
+          <Unicode>Domestic sales requirement</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="79aa9985-5888-4e2a-b4bb-b58abe4da39d" custom="readingOrder {index: 54;}">
+        <Coords points="181,566 181,577 246,577 246,566"/>
+        <TextEquiv>
+          <Unicode>国内销售要求</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="9dcd1187-108a-442a-9f62-a0353388dbd8" custom="readingOrder {index: 55;}">
+        <Coords points="299,566 299,582 399,582 399,566"/>
+        <TextEquiv>
+          <Unicode>རྒྱལ་ཁབ་ཀྱི་བྲིན་ཚོང་བླང་བྱ།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="8c45f739-00aa-4c0c-aacf-8686e135d251" custom="readingOrder {index: 56;}">
+        <Coords points="40,596 40,607 118,607 118,596"/>
+        <TextEquiv>
+          <Unicode>Domestic subsidy</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="2386d850-7d02-4a99-95a6-af28be8cbe5a" custom="readingOrder {index: 57;}">
+        <Coords points="180,598 180,608 221,608 221,598"/>
+        <TextEquiv>
+          <Unicode>国内补贴</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="42167a48-15ee-4fe9-807b-4cac058b337c" custom="readingOrder {index: 58;}">
+        <Coords points="39,627 39,642 119,642 119,627"/>
+        <TextEquiv>
+          <Unicode>Domestic support</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="6c90dddb-e074-4c2b-acaf-55683d1ef6fb" custom="readingOrder {index: 59;}">
+        <Coords points="180,629 180,640 256,640 256,629"/>
+        <TextEquiv>
+          <Unicode>(&amp;&quot;)EA#*</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="f05ea1f8-01d4-44e0-85c8-fc71b07b6db1" custom="readingOrder {index: 60;}">
+        <Coords points="39,653 39,664 165,664 165,653"/>
+        <TextEquiv>
+          <Unicode>Dispute Settlement Body</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="cd18676e-c56c-4989-88fe-1afb662c3f05" custom="readingOrder {index: 61;}">
+        <Coords points="41,667 41,678 70,678 70,667"/>
+        <TextEquiv>
+          <Unicode>(DSB)</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="2a3ff61a-c7b4-4bed-b1ba-67f0cbee6e42" custom="readingOrder {index: 62;}">
+        <Coords points="40,682 40,695 164,695 164,682"/>
+        <TextEquiv>
+          <Unicode>Understanding on Rules</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="a99dae8f-c093-4ea6-8867-69db0f39e3bf" custom="readingOrder {index: 63;}">
+        <Coords points="179,661 179,671 245,671 245,661"/>
+        <TextEquiv>
+          <Unicode>争端解决机构</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="90572a06-da84-434f-865e-95adc8b4ab6c" custom="readingOrder {index: 64;}">
+        <Coords points="38,695 38,715 269,715 269,695"/>
+        <TextEquiv>
+          <Unicode>and Procedures Goterwing | «€F%***</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="5f3cd08b-f50c-4283-85fa-f124a3935c36" custom="readingOrder {index: 65;}">
+        <Coords points="38,712 38,729 252,729 252,712"/>
+        <TextEquiv>
+          <Unicode>the Settle-went of Disputes | HH* 00 00t 8 5&gt;</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="ee7e3109-0cd2-4401-83c8-9bba22ab91a0" custom="readingOrder {index: 66;}">
+        <Coords points="299,598 299,613 414,613 414,598"/>
+        <TextEquiv>
+          <Unicode>རྒྱལ་ནང་གི་ཁ་གསབ་བྱེད་རིགས།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="c82bd11c-f489-4cb5-82d0-b2708b439113" custom="readingOrder {index: 67;}">
+        <Coords points="300,630 300,645 421,645 421,630"/>
+        <TextEquiv>
+          <Unicode>(ཞིང་ལས་)རྒྱལ་ནང་གི་རྒྱབ་སྐྱོར།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="4a8c0634-6cdd-4e91-bb59-d23f2db4f26f" custom="readingOrder {index: 68;}">
+        <Coords points="298,651 298,670 437,670 437,651"/>
+        <TextEquiv>
+          <Unicode>རྩོད་གཞི་ཐག་གཅོད་ བྱེད་མཁན་ སྒྲིག་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="694c14eb-3d2e-46f2-90a8-798873b016bc" custom="readingOrder {index: 69;}">
+        <Coords points="296,669 296,684 313,684 313,669"/>
+        <TextEquiv>
+          <Unicode>གཞི།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="8fbb4b5f-50d2-4387-b8be-6c748277ef55" custom="readingOrder {index: 70;}">
+        <Coords points="288,697 288,716 438,716 438,697"/>
+        <TextEquiv>
+          <Unicode>- ཚོད་གཞི་ ཐག་གཅོད་ བྱེད་ པའི་ སྒྲིག་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="d6b789d2-97c2-4503-821b-c5feaa716a99" custom="readingOrder {index: 71;}">
+        <Coords points="297,715 297,731 427,731 427,715"/>
+        <TextEquiv>
+          <Unicode>སྲོལ་དང་གོ་རིམ་སྐོར་གྱི་བསམ་ཤེས།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="ae1b1e88-c3f0-4692-bca3-1d5e38b9dcc6" custom="readingOrder {index: 72;}">
+        <Coords points="40,728 40,739 72,739 72,728"/>
+        <TextEquiv>
+          <Unicode>(DSU)</Unicode>
+        </TextEquiv>
+      </TextLine>
+    </TextRegion>
+  </Page>
+</PcGts>

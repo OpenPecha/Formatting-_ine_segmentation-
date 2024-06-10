@@ -1,0 +1,174 @@
+<?xml version="1.0" ?>
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15/pagecontent.xsd">
+  <Metadata>
+    <Creator>Google Books</Creator>
+    <Created>2024-06-10T11:08:30.326+00:00</Created>
+    <LastChanged>2024-06-10T12:16:41.393+00:00</LastChanged>
+  </Metadata>
+  <Page imageFilename="00000339.jpg_2000x700.jpg">
+    <ReadingOrder>
+      <OrderedGroup id="1234_0" caption="Regions reading order">
+        <RegionRefIndexed index="0" regionRef="region_main"/>
+      </OrderedGroup>
+    </ReadingOrder>
+    <TextRegion id="region_main" custom="readingOrder {index:0;} structure {type:paragraph;}">
+      <Coords points="79,24 79,336 1893,336 1893,24"/>
+      <TextLine id="516823dc-6ccf-4310-b645-1f311abccfe1" custom="readingOrder {index: 0;}">
+        <Coords points="184,51 184,68 356,68 356,51"/>
+        <TextEquiv>
+          <Unicode>ཉོ་ཚོང་གི་རྒུད་སྐྱོབ་བྱེད་ཐབས་སྐོར་གྱི་གྲོས་མཐུན།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="8fec5394-bc55-47c7-a4cb-64490f32647e" custom="readingOrder {index: 1;}">
+        <Coords points="434,53 434,66 457,66 457,53"/>
+        <TextEquiv>
+          <Unicode>319</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="5dfd7146-519b-43c0-996f-9a841f13f749" custom="readingOrder {index: 2;}">
+        <Coords points="67,86 67,110 332,110 332,86"/>
+        <TextEquiv>
+          <Unicode>པར་བཙན་ཤེད་ཀྱིས་དང་ལེན་བྱེད་དུ་བཅུག་མི་ཆོག</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eb149ad5-747c-4828-bd0d-489608eee1ce" custom="readingOrder {index: 3;}">
+        <Coords points="63,111 63,139 473,139 473,111"/>
+        <TextEquiv>
+          <Unicode>3.1.4.རིན་གོང་ཇི་ཡིན་ཁས་བླངས་དོན་དེ་དང་ལེན་བྱས་རྗེས་ཕྱིར་གཏོང་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="34b4dcaa-aac8-4e80-aaa3-4516e88dc403" custom="readingOrder {index: 4;}">
+        <Coords points="66,140 66,166 475,166 475,140"/>
+        <TextEquiv>
+          <Unicode>བྱེད་མཁན་ཚོང་པའི་རེ་འདུན་ནམ་ནང་འདྲེན་བྱེད་མཁན་ཕྱོགས་ཀྱི་གཙོ་སྐྱོང་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="543949b7-2306-4bb6-8be0-8bb7401f883e" custom="readingOrder {index: 5;}">
+        <Coords points="66,168 66,194 474,194 474,168"/>
+        <TextEquiv>
+          <Unicode>སྒྲིག་གཞིས་གཏན་འབེབས་བྱས་པར་གཞིགས་ནས་མུ་མཐུད་དེ་ཕམ་ཚོང་རྒྱག་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="fc8e9124-7de7-4861-bad4-43b847865190" custom="readingOrder {index: 6;}">
+        <Coords points="66,196 66,222 474,222 474,196"/>
+        <TextEquiv>
+          <Unicode>པ་དང་གནོད་སྐྱོན་སྐོར་གྱི་བརྟག་དཔྱད་བྱས་ཆོག གལ་སྲིད་ཕམ་ཚོང་རྒྱག་པ་ </Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="778f1985-9145-41f6-8cd2-e3bb6a907585" custom="readingOrder {index: 7;}">
+        <Coords points="65,224 65,250 473,250 473,224"/>
+        <TextEquiv>
+          <Unicode>དང་གནོད་སྐྱོན་སྐོར་གྱི་བརྟག་དཔྱད་བྱས་པའི་མཇུག་བསྡོམས་ཡིན་ལོག་ ཏུ་ </Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="4dd64ba7-87af-4c10-8313-0e27d74bdf9b" custom="readingOrder {index: 8;}">
+        <Coords points="65,251 65,279 473,279 473,251"/>
+        <TextEquiv>
+          <Unicode>བསྒྲུབས་ན། ཁས་བླངས་པའི་རིན་གོང་རང་ཤུགས་སུ་ཕན་མེད་དུ་འགྱུར་རྒྱུ་ </Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="48cb1de9-7eac-4483-a439-429d0827c28d" custom="readingOrder {index: 9;}">
+        <Coords points="64,280 64,305 474,305 474,280"/>
+        <TextEquiv>
+          <Unicode>དང་། གལ་སྲིད་མཇུག་བསྡོམས་དེ་གཏན་ཁེལ་ཡིན་ན། ཁས་བླངས་པའི་རིན་ </Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="8165c47f-cfcb-482e-9ca2-e28294b1dc51" custom="readingOrder {index: 10;}">
+        <Coords points="64,308 64,333 359,333 359,308"/>
+        <TextEquiv>
+          <Unicode>གོང་དེར་གཏན་འབེབས་ལྟར་མུ་མཐུད་དེ་ནུས་པ་ཐོན་རྒྱུ། </Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="3b06c1c6-9ca3-4d86-9a40-af74b2043a97" custom="readingOrder {index: 11;}">
+        <Coords points="58,331 58,361 472,361 472,331"/>
+        <TextEquiv>
+          <Unicode>བྱེད་5.གལ་སྲིད་ཕྱིར་གཏོང་བྱེད་མཁན་ཚོང་པས་རིན་གོང་ཇི་ཡིན་ཁས་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="63470fb3-f23f-41f5-b2f8-e84ef5c9333b" custom="readingOrder {index: 12;}">
+        <Coords points="66,360 66,389 472,389 472,360"/>
+        <TextEquiv>
+          <Unicode>ལེན་སྐོར་གྱི་གྲོས་མཐུན་ལས་འགལ་ཚེ། ནང་འདྲེན་བྱེད་མཁན་ཕྱོགས་ཀྱི་གཙོ་ </Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="dd590fc6-93f4-4784-8633-4b55283ca04e" custom="readingOrder {index: 13;}">
+        <Coords points="63,388 63,417 471,417 471,388"/>
+        <TextEquiv>
+          <Unicode>སྐྱོང་སྒྲིག་ གཞིས་ འབྲེལ་ ཡོད་ གཏན་ འབེབས་ ལ་ གཞིགས་ ནས་ བྱ་ སྤྱོད་ གང་ </Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="8c71ed07-e520-44b3-a2b5-5b6971dcd5c5" custom="readingOrder {index: 14;}">
+        <Coords points="64,417 64,442 473,442 473,417"/>
+        <TextEquiv>
+          <Unicode>མགྱོགས་སུ་སྤེལ་ཆོག་པ་དང༌། དེའི་ནང་ཐོབ་པའི་ཆ་འཕྲིན་ལེགས་ཤོས་ལ་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="729261c3-60d6-4b1b-84ba-a43df56bf034" custom="readingOrder {index: 15;}">
+        <Coords points="63,445 63,473 472,473 472,445"/>
+        <TextEquiv>
+          <Unicode>བརྟེན་ནས་འཕྲལ་མར་ཕམ་ཚོང་རྒྱག་པར་ངོ་རྒོལ་བྱེད་ཐབས་སྤྱད་ཆོག་པ་མ་ </Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="bae74976-a45e-4bd1-8edd-07322478c836" custom="readingOrder {index: 16;}">
+        <Coords points="63,473 63,498 377,498 377,473"/>
+        <TextEquiv>
+          <Unicode>ཟད། འཕྲལ་མར་ཕམ་ཚོང་རྒོལ་ཁྲལ་འདེད་འཇལ་བྱས་ཆོག</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="ac330ca3-577b-40e2-a667-88edb3f48e62" custom="readingOrder {index: 17;}">
+        <Coords points="58,500 58,529 471,529 471,500"/>
+        <TextEquiv>
+          <Unicode>ཿ གསུམ། ཕམ་ཚོང་རྒྱག་པར་ངོ་རྒོལ་བྱེད་ཐབས་ལག་བསྟར་བྱ་རྒྱུའི་སྐོར་ </Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="3ac2ea2f-b33c-4c67-912d-2dc3b81726b0" custom="readingOrder {index: 18;}">
+        <Coords points="61,530 61,552 162,552 162,530"/>
+        <TextEquiv>
+          <Unicode>གྱི་གཞི་རྩའི་གོ་རིམ།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="55412ce5-439f-4da6-801f-cf5e172d3394" custom="readingOrder {index: 19;}">
+        <Coords points="97,557 97,583 365,583 365,557"/>
+        <TextEquiv>
+          <Unicode>(གཅིག) རེ་འདུན་ཞུ་མཁན་གྱིས་རེ་འདུན་ཞུ་རྒྱུ།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="522967a3-fa7a-4fde-946b-560c171cc9d9" custom="readingOrder {index: 20;}">
+        <Coords points="94,586 94,612 469,612 469,586"/>
+        <TextEquiv>
+          <Unicode>སྤྱིར་བཏང་ གི་གནས་ ཚུལ་འོག་ ཕམ་ཚོང་ རྒྱག་པར་ངོ་ རྒོལ་ བྱེད་ པའི་ </Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="e362e995-16a3-4fdb-aaca-40757b6739b7" custom="readingOrder {index: 21;}">
+        <Coords points="61,613 61,641 471,641 471,613"/>
+        <TextEquiv>
+          <Unicode>བརྟག་དཔྱད་ནི་རེ་འདུན་ཞུ་མཁན་གྱིས་རེ་འདུན་ཞུ་བ་ནས་འགོ་བརྩམ་རྒྱུ་ཡིན། </Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="fb81e72f-195a-4e5f-80ba-89d7aba56c25" custom="readingOrder {index: 22;}">
+        <Coords points="60,642 60,669 470,669 470,642"/>
+        <TextEquiv>
+          <Unicode>རེ་འདུན་ཞུ་མཁན་གྱི་ཐོན་ལས་ཀྱི་ཚབ་མཚོན་རང་བཞིན་ལ་འགན་ལེན་བྱེད་ </Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="973eea20-4cc4-4145-9ca9-fc4bf0a25547" custom="readingOrder {index: 23;}">
+        <Coords points="60,668 60,697 471,697 471,668"/>
+        <TextEquiv>
+          <Unicode>ཆེད། 《ཕམ་ཚོང་རྒྱག་པར་ངོ་རྒོལ་བྱེད་ཕྱོགས་སྐོར་གྱི་གྲོས་མཐུན་》ནང་རྒྱལ་ </Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="21a2800b-f604-45f9-9719-b54ea443c510" custom="readingOrder {index: 24;}">
+        <Coords points="60,699 60,725 469,725 469,699"/>
+        <TextEquiv>
+          <Unicode>ནང་གི་ཐོན་ལས་ལ་སྤྱིར་བཏང་གི་བསམ་ཤེས་བྱ་རྒྱུའི་གཏན་འབེབས་བྱས་པ་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="3e6eea10-2409-430c-af30-20c6aea245b6" custom="readingOrder {index: 25;}">
+        <Coords points="62,727 62,752 470,752 470,727"/>
+        <TextEquiv>
+          <Unicode>ཕུད། ད་དུང་ནང་འདྲེན་བྱེད་མཁན་ཕྱོགས་ཀྱི་གཙོ་སྐྱོང་སྒྲིག་གཞིས་ཐོན་ལས་</Unicode>
+        </TextEquiv>
+      </TextLine>
+    </TextRegion>
+  </Page>
+</PcGts>

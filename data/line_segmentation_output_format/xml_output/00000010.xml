@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15/pagecontent.xsd">
+  <Metadata>
+    <Creator>Google Books</Creator>
+    <Created>2024-06-10T11:08:30.326+00:00</Created>
+    <LastChanged>2024-06-10T12:16:41.436+00:00</LastChanged>
+  </Metadata>
+  <Page imageFilename="00000010.jpg_2000x700.jpg">
+    <ReadingOrder>
+      <OrderedGroup id="1234_0" caption="Regions reading order">
+        <RegionRefIndexed index="0" regionRef="region_main"/>
+      </OrderedGroup>
+    </ReadingOrder>
+    <TextRegion id="region_main" custom="readingOrder {index:0;} structure {type:paragraph;}">
+      <Coords points="79,24 79,336 1893,336 1893,24"/>
+      <TextLine id="17162207-89c8-4114-8250-de5a590445e5" custom="readingOrder {index: 0;}">
+        <Coords points="145,453 145,485 353,485 353,453"/>
+        <TextEquiv>
+          <Unicode>gyel degel Beddgel </Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="7e8d716f-d16f-4bb1-a57a-cc63817d47c5" custom="readingOrder {index: 1;}">
+        <Coords points="62,419 62,454 355,454 355,419"/>
+        <TextEquiv>
+          <Unicode>my33 33</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="66ce4e8f-caf7-4f62-9f00-00480a3176db" custom="readingOrder {index: 2;}">
+        <Coords points="340,368 340,394 358,394 358,368"/>
+        <TextEquiv>
+          <Unicode>3</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="b144b32a-7886-44b2-b351-ac2983e807c9" custom="readingOrder {index: 3;}">
+        <Coords points="235,335 235,367 481,367 481,335"/>
+        <TextEquiv>
+          <Unicode>2.Bal..gel dags.gally.</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="0801d92d-da5a-48d2-89f5-e3e05cea35db" custom="readingOrder {index: 4;}">
+        <Coords points="64,357 64,387 174,387 174,357"/>
+        <TextEquiv>
+          <Unicode>dl 36.g.all</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="b6a19582-ab4e-4ded-bfb3-4ccb266723bb" custom="readingOrder {index: 5;}">
+        <Coords points="80,330 80,357 196,357 196,330"/>
+        <TextEquiv>
+          <Unicode>dag 03.0</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="41419dfb-3230-472e-b978-842c96ce863c" custom="readingOrder {index: 6;}">
+        <Coords points="70,264 70,306 484,306 484,264"/>
+        <TextEquiv>
+          <Unicode>Saldadel 30 del gely.</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="33cb7e69-42d6-47f8-87f2-fe8e432dd792" custom="readingOrder {index: 7;}">
+        <Coords points="270,240 270,272 462,272 462,240"/>
+        <TextEquiv>
+          <Unicode>... uksel</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="bbea5391-6c24-4479-bf5c-1f3fdd4539a5" custom="readingOrder {index: 8;}">
+        <Coords points="73,137 73,177 486,177 486,137"/>
+        <TextEquiv>
+          <Unicode>(D...........</Unicode>
+        </TextEquiv>
+      </TextLine>
+    </TextRegion>
+  </Page>
+</PcGts>

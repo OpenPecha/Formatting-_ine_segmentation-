@@ -1,0 +1,384 @@
+<?xml version="1.0" ?>
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15/pagecontent.xsd">
+  <Metadata>
+    <Creator>Google Books</Creator>
+    <Created>2024-06-10T11:08:30.326+00:00</Created>
+    <LastChanged>2024-06-10T12:16:40.038+00:00</LastChanged>
+  </Metadata>
+  <Page imageFilename="00000562.jpg_2000x700.jpg">
+    <ReadingOrder>
+      <OrderedGroup id="1234_0" caption="Regions reading order">
+        <RegionRefIndexed index="0" regionRef="region_main"/>
+      </OrderedGroup>
+    </ReadingOrder>
+    <TextRegion id="region_main" custom="readingOrder {index:0;} structure {type:paragraph;}">
+      <Coords points="79,24 79,336 1893,336 1893,24"/>
+      <TextLine id="11198242-68ec-4dc0-a5fe-b1350043d8a8" custom="readingOrder {index: 0;}">
+        <Coords points="84,56 84,66 105,66 105,56"/>
+        <TextEquiv>
+          <Unicode>542</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="d5268e16-9f4e-46c9-9f68-8ce35be8c309" custom="readingOrder {index: 1;}">
+        <Coords points="173,56 173,75 370,75 370,56"/>
+        <TextEquiv>
+          <Unicode>འཛམ་གླིང་ཚོང་དོན་ཚོགས་པའི་སྐོར་གྱི་གཞི་རྩའི་ཤེས་བྱ།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="01e962b3-0309-443d-93f2-630c909f0d4e" custom="readingOrder {index: 2;}">
+        <Coords points="252,105 252,116 288,116 288,105"/>
+        <TextEquiv>
+          <Unicode>=U=</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="43758ba6-b53d-4e66-9470-0768d36c9c4b" custom="readingOrder {index: 3;}">
+        <Coords points="211,136 211,148 313,148 313,136"/>
+        <TextEquiv>
+          <Unicode>(%{R)ke$F{H</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="759432f2-a400-4242-b9f1-28b9f8f5b5cc" custom="readingOrder {index: 4;}">
+        <Coords points="330,129 330,149 469,149 469,129"/>
+        <TextEquiv>
+          <Unicode>(ཤེས་ ཡོན་ གྱི་ ཐོན་ དངོས་ བདག་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="42cba12c-9fb2-437e-a9f9-757cebb128d7" custom="readingOrder {index: 5;}">
+        <Coords points="72,140 72,153 180,153 180,140"/>
+        <TextEquiv>
+          <Unicode>Undisclosed information</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="de728a87-12f3-48c7-a29b-0c50ef40efc5" custom="readingOrder {index: 6;}">
+        <Coords points="71,175 71,186 196,186 196,175"/>
+        <TextEquiv>
+          <Unicode>United Nations Conference</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="e7a1bdef-cdc8-4e7d-8655-97d106548bd4" custom="readingOrder {index: 7;}">
+        <Coords points="71,187 71,202 196,202 196,187"/>
+        <TextEquiv>
+          <Unicode>on Trade and Development</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="bd33aeaf-a651-4100-9cff-53932041bf32" custom="readingOrder {index: 8;}">
+        <Coords points="72,203 72,214 126,214 126,203"/>
+        <TextEquiv>
+          <Unicode>(UNCTAID)</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="bfba2b61-090f-4a5f-b481-a9ccfe7fa5d9" custom="readingOrder {index: 9;}">
+        <Coords points="70,227 70,240 141,240 141,227"/>
+        <TextEquiv>
+          <Unicode>Uruguay Round</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="bc4d3924-afeb-436f-8f6c-4a2d187f4219" custom="readingOrder {index: 10;}">
+        <Coords points="210,152 210,161 220,161 220,152"/>
+        <TextEquiv>
+          <Unicode>息</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="8218f152-8005-418d-bd4b-74c3201d0c09" custom="readingOrder {index: 11;}">
+        <Coords points="329,147 329,162 468,162 468,147"/>
+        <TextEquiv>
+          <Unicode>དབང་༽ ཁྱབ་བསྒྲགས་བྱས་མེད་པའི་ཆ་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="ea326231-4179-46ea-8a53-650b72824a54" custom="readingOrder {index: 12;}">
+        <Coords points="327,158 327,176 354,176 354,158"/>
+        <TextEquiv>
+          <Unicode>འཕྲིན།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="4013e127-e6d5-49db-b8d9-9993daf8fd24" custom="readingOrder {index: 13;}">
+        <Coords points="218,180 218,202 467,202 467,180"/>
+        <TextEquiv>
+          <Unicode>A!ཧྨH&amp;R | མཉམ་འབྲེལ་རྒྱལ་ཚོགས་ཀྱི་ཉོ་ཚོང་དང་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="39be6d97-18a9-46df-a3f9-84588cb7c770" custom="readingOrder {index: 14;}">
+        <Coords points="209,197 209,207 219,207 219,197"/>
+        <TextEquiv>
+          <Unicode>议</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="cc8151b7-f939-4294-a793-8126a9ff820a" custom="readingOrder {index: 15;}">
+        <Coords points="328,200 328,215 410,215 410,200"/>
+        <TextEquiv>
+          <Unicode>འཕེལ་རྒྱས་གྲོས་ཚོགས།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="9c96b00b-c2a8-4212-9597-3b9358978a2c" custom="readingOrder {index: 16;}">
+        <Coords points="209,230 209,239 264,239 264,230"/>
+        <TextEquiv>
+          <Unicode>乌拉圭回合</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="cb6ee152-0278-4446-aa17-159f1ffd3a71" custom="readingOrder {index: 17;}">
+        <Coords points="327,231 327,246 429,246 429,231"/>
+        <TextEquiv>
+          <Unicode>སྐུ་ར་ཀུའེ་རིས་སྐོར་གྲོས་མོལ།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="6e9ddceb-1d3d-41f8-90a0-3987194525e9" custom="readingOrder {index: 18;}">
+        <Coords points="262,260 262,273 286,273 286,260"/>
+        <TextEquiv>
+          <Unicode>Vལ</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="ff225bd2-e3c0-43ab-8843-344fa00d2646" custom="readingOrder {index: 19;}">
+        <Coords points="69,292 69,301 135,301 135,292"/>
+        <TextEquiv>
+          <Unicode>Variable duties</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="ab3bef6c-74c4-4876-b20e-7d7d29c489e8" custom="readingOrder {index: 20;}">
+        <Coords points="207,293 207,303 240,303 240,293"/>
+        <TextEquiv>
+          <Unicode>差价税</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="d159ba28-edcb-466c-a9bc-8aeabe80e45d" custom="readingOrder {index: 21;}">
+        <Coords points="68,319 68,328 123,328 123,319"/>
+        <TextEquiv>
+          <Unicode>Value-added</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="17ddbf2c-8bce-4f49-8870-e510e3c0a269" custom="readingOrder {index: 22;}">
+        <Coords points="207,329 207,339 273,339 273,329"/>
+        <TextEquiv>
+          <Unicode>增值电信服务</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="98f8e59e-a5e1-40e1-82eb-3f7668e3d8bf" custom="readingOrder {index: 23;}">
+        <Coords points="68,332 68,345 188,345 188,332"/>
+        <TextEquiv>
+          <Unicode>telecommunication services</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="0fc6bdf2-9670-4f71-a4f4-076ad5253a15" custom="readingOrder {index: 24;}">
+        <Coords points="68,358 68,372 191,372 191,358"/>
+        <TextEquiv>
+          <Unicode>Voluntary export restraints </Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="4bbc00ce-0336-4315-a1cd-106c11161391" custom="readingOrder {index: 25;}">
+        <Coords points="68,372 68,382 104,382 104,372"/>
+        <TextEquiv>
+          <Unicode>(VERs)</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="7468c83f-9b1a-4440-911c-a7d3eacd7af6" custom="readingOrder {index: 26;}">
+        <Coords points="207,368 207,377 272,377 272,368"/>
+        <TextEquiv>
+          <Unicode>自愿出口限制</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="41e4d7ba-456e-4f23-842d-6cfad41a8222" custom="readingOrder {index: 27;}">
+        <Coords points="326,294 326,310 393,310 393,294"/>
+        <TextEquiv>
+          <Unicode>རིན་ཁྱད་དཔྱ་ཁྲལ།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="03e8d240-1819-4c61-bcd4-4d4893a65695" custom="readingOrder {index: 28;}">
+        <Coords points="326,329 326,346 439,346 439,329"/>
+        <TextEquiv>
+          <Unicode>རིན་འཕར་གློག་འཕྲིན་ཞབས་ཞུ།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="2dbff4c3-8f0d-4a5f-a17b-2e959a595b08" custom="readingOrder {index: 29;}">
+        <Coords points="325,369 325,386 455,386 455,369"/>
+        <TextEquiv>
+          <Unicode>རང་འདོད་ཀྱི་ཕྱིར་གཏོང་ཚོད་འཛིན།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="4696274d-6ec9-4ce3-8842-0bcfdeeb803b" custom="readingOrder {index: 30;}">
+        <Coords points="66,432 66,443 99,443 99,432"/>
+        <TextEquiv>
+          <Unicode>Waiver</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="b208c5bf-7f75-47ee-8fe7-f134d8f0fdd7" custom="readingOrder {index: 31;}">
+        <Coords points="66,463 66,477 156,477 156,463"/>
+        <TextEquiv>
+          <Unicode>Washington Treaty</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="5fc1e0c4-92c3-48f9-8650-5a770ed13ac2" custom="readingOrder {index: 32;}">
+        <Coords points="64,494 64,507 164,507 164,494"/>
+        <TextEquiv>
+          <Unicode>Withdraw concessions</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="6c009e0b-7418-4342-81ee-e353ee194cea" custom="readingOrder {index: 33;}">
+        <Coords points="206,434 206,446 260,446 260,434"/>
+        <TextEquiv>
+          <Unicode>( © #)£</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="a672a129-110d-49f6-b4c9-2de8993ed2b3" custom="readingOrder {index: 34;}">
+        <Coords points="253,401 253,416 271,416 271,401"/>
+        <TextEquiv>
+          <Unicode>-W</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="484ac7d7-b3bb-450f-9df6-1807039634fc" custom="readingOrder {index: 35;}">
+        <Coords points="325,436 325,452 445,452 445,436"/>
+        <TextEquiv>
+          <Unicode>(འོས་འགན་) ཆག་ཡང་གཏོང་བ།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="a3566afd-747b-443a-a5d5-4321f432640b" custom="readingOrder {index: 36;}">
+        <Coords points="323,467 323,483 418,483 418,467"/>
+        <TextEquiv>
+          <Unicode>《ཝ་ཧྲིང་ཐོན་ཆིངས་ཡིག»</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="cb13773b-6735-48ae-ad44-27f0081887af" custom="readingOrder {index: 37;}">
+        <Coords points="322,499 322,514 397,514 397,499"/>
+        <TextEquiv>
+          <Unicode>ཉུང་འཕྲི་ཕྱིར་འཐེན།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="892587c3-37da-41f9-8f34-21a4eef6174b" custom="readingOrder {index: 38;}">
+        <Coords points="322,533 322,552 443,552 443,533"/>
+        <TextEquiv>
+          <Unicode>འཛམ་གླིང་འགག་སྒོའི་རྩ་འཛུགས།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="0e595875-9922-44a4-a997-66243c66c8ea" custom="readingOrder {index: 39;}">
+        <Coords points="204,498 204,508 247,508 247,498"/>
+        <TextEquiv>
+          <Unicode>撤回减让</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="3c9a5835-b2fd-46db-a3b9-609614409367" custom="readingOrder {index: 40;}">
+        <Coords points="64,523 64,533 92,533 92,523"/>
+        <TextEquiv>
+          <Unicode>World</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="6b991a3d-11e4-41cd-801a-f37437d4c7f1" custom="readingOrder {index: 41;}">
+        <Coords points="150,526 150,535 189,535 189,526"/>
+        <TextEquiv>
+          <Unicode>Customs</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="c9cb836b-8154-4d19-a2e0-aacaa17c274d" custom="readingOrder {index: 42;}">
+        <Coords points="203,533 203,543 269,543 269,533"/>
+        <TextEquiv>
+          <Unicode>世界海关组织</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="b055f206-76e3-443c-ba98-e40594e3a0f8" custom="readingOrder {index: 43;}">
+        <Coords points="64,539 64,551 158,551 158,539"/>
+        <TextEquiv>
+          <Unicode>Organization (WCO)</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="2406ace9-0614-44a5-a49e-1d0ed946e12c" custom="readingOrder {index: 44;}">
+        <Coords points="63,568 63,582 189,582 189,568"/>
+        <TextEquiv>
+          <Unicode>World Intellectual Property</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="e1565809-0fce-4e4d-bf7e-7506e8eba8a4" custom="readingOrder {index: 45;}">
+        <Coords points="63,583 63,597 158,597 158,583"/>
+        <TextEquiv>
+          <Unicode>Organization (WIPO)</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="88eecce5-3220-48ef-abe1-b2df4beda07f" custom="readingOrder {index: 46;}">
+        <Coords points="62,613 62,628 187,628 187,613"/>
+        <TextEquiv>
+          <Unicode>World Trade Organization</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="cd8d43c6-945f-4ac0-be2d-0a2e0b79bd9d" custom="readingOrder {index: 47;}">
+        <Coords points="201,625 201,634 268,634 268,625"/>
+        <TextEquiv>
+          <Unicode>世界贸易组织</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="a198f5e2-fde8-4c3b-9515-a22aa8b34314" custom="readingOrder {index: 48;}">
+        <Coords points="62,630 62,640 98,640 98,630"/>
+        <TextEquiv>
+          <Unicode>(WTO)</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="aaee56b9-40b9-4b42-a6ef-e7d76858e671" custom="readingOrder {index: 49;}">
+        <Coords points="202,578 202,589 289,589 289,578"/>
+        <TextEquiv>
+          <Unicode>世界知识产权组织</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="5ab8116c-1086-4a18-977a-b08bb67cbc18" custom="readingOrder {index: 50;}">
+        <Coords points="321,571 321,590 459,590 459,571"/>
+        <TextEquiv>
+          <Unicode>འཛམ་ གླིང་ ཤེས་ ཡོན་ གྱི་ ཐོན་ དངོས་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="52a10544-cacf-4568-be6b-7e0011ae7446" custom="readingOrder {index: 51;}">
+        <Coords points="321,590 321,603 410,603 410,590"/>
+        <TextEquiv>
+          <Unicode>བདག་དབང་རྩ་འཛུགས།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="82b9880e-4c1d-46ed-af91-e8222bdc1896" custom="readingOrder {index: 52;}">
+        <Coords points="320,625 320,642 426,642 426,625"/>
+        <TextEquiv>
+          <Unicode>འཛམ་གླིང་ཚོང་དོན་ཚོགས་པ།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="75635e3f-09f5-49d6-b2c1-8dea6faaf2db" custom="readingOrder {index: 53;}">
+        <Coords points="61,666 61,677 132,677 132,666"/>
+        <TextEquiv>
+          <Unicode>WTO Members</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="a91880f7-8633-4154-a33a-924aa0bbeeda" custom="readingOrder {index: 54;}">
+        <Coords points="201,657 201,678 459,678 459,657"/>
+        <TextEquiv>
+          <Unicode>tlh 9! 9R 38 2H 61 +e {k iE | འཛམ་གླིང་ཚོང་དོན་ཚོགས་པའི་ཁོངས་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="6a9cf3d6-0aa5-42b1-84f1-cdec84150fa4" custom="readingOrder {index: 55;}">
+        <Coords points="199,676 199,685 210,685 210,676"/>
+        <TextEquiv>
+          <Unicode>员</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="f920540f-7ee7-4088-9c57-9ee91622ddae" custom="readingOrder {index: 56;}">
+        <Coords points="319,678 319,693 415,693 415,678"/>
+        <TextEquiv>
+          <Unicode>ཞུགས་ཕྱོགས་ཡོངས་རྫོགས།</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="8e812a49-ffde-46b7-b356-e98ec3ac5a08" custom="readingOrder {index: 57;}">
+        <Coords points="60,714 60,724 138,724 138,714"/>
+        <TextEquiv>
+          <Unicode>WTO Secretariat</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="6ee85dfe-9c90-43b8-b099-922625044d75" custom="readingOrder {index: 58;}">
+        <Coords points="199,716 199,727 299,727 299,716"/>
+        <TextEquiv>
+          <Unicode>世界贸易组织秘书处</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="71130e9d-5cad-4f26-8461-a59f43681e72" custom="readingOrder {index: 59;}">
+        <Coords points="318,706 318,725 459,725 459,706"/>
+        <TextEquiv>
+          <Unicode>འཛམ་གླིང་ཚོང་དོན་ཚོགས་ པའི་ དྲུང་</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="e2ac7abf-0316-4b40-b852-59864155e99f" custom="readingOrder {index: 60;}">
+        <Coords points="318,724 318,739 354,739 354,724"/>
+        <TextEquiv>
+          <Unicode>ཡིག་ཁང་།</Unicode>
+        </TextEquiv>
+      </TextLine>
+    </TextRegion>
+  </Page>
+</PcGts>
