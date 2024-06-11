@@ -8,6 +8,10 @@ version = "0.0.1"
 authors = [
   { name="OpenPecha", email="dev@openpecha.org" },
 ]
+dependencies = [
+  "beautifulsoup4>=4.12.3",
+]
+
 description = "A small example package"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -16,6 +20,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+
 
 [project.optional-dependencies]
 dev = [
