@@ -61,7 +61,7 @@ def convert_to_xml(ocr_data, image_metadata, creator_name, created_time):
     for i, item in enumerate(ocr_data):
         bbox = item['bbox']
         text_line = ET.SubElement(text_region, "TextLine", {
-            "id": str(uuid.uuid4()),
+            "id": str(i),
             "custom": f"readingOrder {{index: {i};}}"
         })
         line_coords = ET.SubElement(text_line, "Coords", {
@@ -77,28 +77,59 @@ def prettify_xml(elem):
 
 # Main function to process HTML and XML files and convert them to JSONL and XML formats.
 def main():
-    input_directory_html = '/Users/ogyenthoga/Desktop/Work/Formatting_line_segmentation/data/line_segmentation_images/google_book_html/'
-    input_directory_xml = '/Users/ogyenthoga/Desktop/Work/Formatting_line_segmentation/data/line_segmentation_images/Correction-2/'
-    image_directory = '/Users/ogyenthoga/Desktop/Work/Formatting_line_segmentation/data/line_segmentation_images/google_book_images/'
-    output_file_html = '/Users/ogyenthoga/Desktop/Work/Formatting_line_segmentation/data/line_segmentation_output_format/google_books_data.jsonl'
-    output_file_xml = '/Users/ogyenthoga/Desktop/Work/Formatting_line_segmentation/data/line_segmentation_output_format/htr_team_data.jsonl'
-    output_directory_html = '/Users/ogyenthoga/Desktop/Work/Formatting_line_segmentation/data/line_segmentation_output_format/google_books_data_xml/'
-    output_directory_xml = '/Users/ogyenthoga/Desktop/Work/Formatting_line_segmentation/data/line_segmentation_output_format/htr_teams_data_xml/'
-    if not os.path.exists(output_directory_html):
-        os.makedirs(output_directory_html)
-    if not os.path.exists(output_directory_xml):
-        os.makedirs(output_directory_xml)
-    image_files_html = {os.path.splitext(f)[0]: os.path.join(image_directory, f)
-                        for f in os.listdir(image_directory) if f.lower().endswith(".jpg")}
-    image_files_xml = {os.path.splitext(f)[0]: os.path.join(input_directory_xml, f)
-                       for f in os.listdir(input_directory_xml) if f.lower().endswith(".jpg")}
-    # Process HTML files
-    with open(output_file_html, 'w', encoding='utf-8') as output_0:
-        for filename in os.listdir(input_directory_html):
+    base_path = '/Users/ogyenthoga/Desktop/Work/Formatting_line_segmentation/data/line_segmentation_inputs/'
+    output_base_path = '/Users/ogyenthoga/Desktop/Work/Formatting_line_segmentation/data/line_segmentation_output_format/'
+    paths = {
+        "google_books": {
+            "input_html": f"{base_path}google_book_html/",
+            "input_images": f"{base_path}google_book_images/",
+            "output_jsonl": f"{output_base_path}google_books_data.jsonl",
+            "output_xml": f"{output_base_path}google_books_data_xml/"
+        },
+        "aws": {
+            "input_xml": f"{base_path}htr_team/",
+            "output_jsonl": f"{output_base_path}htr_team_data.jsonl",
+            "output_xml": f"{output_base_path}htr_teams_data_xml/"
+        },
+        "stock_kangyur": {
+            "input_xml": [
+                f"{base_path}stock_kangyur/training_validation_set/page",
+                f"{base_path}stock_kangyur/training_data/page",
+                f"{base_path}stock_kangyur/test_data/page",
+                f"{base_path}stock_kangyur/kdsb_test/page"
+            ],
+            "output_jsonl": [
+                f"{output_base_path}training_validation_set.jsonl",
+                f"{output_base_path}training_data.jsonl",
+                f"{output_base_path}test_data.jsonl",
+                f"{output_base_path}kdsb_test.jsonl"
+            ],
+            "output_xml": [
+                f"{output_base_path}training_validation_set_xml/",
+                f"{output_base_path}training_data_xml/",
+                f"{output_base_path}test_data_xml/",
+                f"{output_base_path}kdsb_test_xml/"
+            ]
+        }
+    }    
+    for output_type in paths.values():
+        output_dirs = output_type.get("output_xml", [])
+        if isinstance(output_dirs, str):
+            output_dirs = [output_dirs]
+        for output_dir in output_dirs:
+            if not os.path.exists(output_dir):
+                os.makedirs(output_dir)
+    image_files_html = {os.path.splitext(f)[0]: os.path.join(paths["google_books"]["input_images"], f)
+                        for f in os.listdir(paths["google_books"]["input_images"]) if f.lower().endswith(".jpg")}
+    image_files_xml = {os.path.splitext(f)[0]: os.path.join(paths["aws"]["input_xml"], f)
+                       for f in os.listdir(paths["aws"]["input_xml"]) if f.lower().endswith(".jpg")}
+    # Process Google Books Data (HTML) files
+    with open(paths["google_books"]["output_jsonl"], 'w', encoding='utf-8') as output_0:
+        for filename in os.listdir(paths["google_books"]["input_html"]):
             if filename.endswith(".html"):
                 file_id = os.path.splitext(filename)[0]
                 if file_id in image_files_html:
-                    file_path = os.path.join(input_directory_html, filename)
+                    file_path = os.path.join(paths["google_books"]["input_html"], filename)
                     image_file_0 = image_files_html[file_id]
                     ocr_data = process_html_file(file_path)
                     image_metadata_0 = extract_metadata_from_html(ocr_data, image_file_0)
@@ -108,17 +139,39 @@ def main():
                         xml_root = convert_to_xml(ocr_data, image_metadata_0, "Google Books",
                                                   "2024-06-10T11:08:30.326+00:00")
                         xml_output = prettify_xml(xml_root)
-                        output_file_path = os.path.join(output_directory_html, f"{file_id}.xml")
-                        with open(output_file_path, 'w', encoding='utf-8') as output_file_html:
-                            output_file_html.write(xml_output)
-    # Process XML files
-    with open(output_file_xml, 'w', encoding='utf-8') as output_1:
-        for filename in os.listdir(input_directory_xml):
+                        output_file_path = os.path.join(paths["google_books"]["output_xml"], f"{file_id}.xml")
+                        with open(output_file_path, 'w', encoding='utf-8') as output_file_google_books:
+                            output_file_google_books.write(xml_output)
+    # Process Stock Kangyur Data (XML) files for each directory
+    for input_directory, output_file, output_directory in zip(paths["stock_kangyur"]["input_xml"], paths["stock_kangyur"]["output_jsonl"], 
+                                                    paths["stock_kangyur"]["output_xml"]):
+        image_files = {os.path.splitext(f)[0]: os.path.join(input_directory, f)
+                       for f in os.listdir(input_directory) if f.lower().endswith(".xml")}
+        with open(output_file, 'w', encoding='utf-8') as output_f:
+            for filename in os.listdir(input_directory):
+                if filename.endswith(".xml"):
+                    file_id = os.path.splitext(filename)[0]
+                    image_file = image_files.get(file_id)
+                    if image_file:
+                        file_path = os.path.join(input_directory, filename)
+                        ocr_data = process_xml_file(file_path)
+                        image_metadata = extract_metadata_from_xml(ocr_data, image_file)
+                        if image_metadata:
+                            jsonl_output = convert_to_jsonl(ocr_data, image_metadata)
+                            output_f.write(jsonl_output + '\n')
+                            xml_root = convert_to_xml(ocr_data, image_metadata, "Transkribus data", "2024-06-10T11:08:30.326+00:00")
+                            xml_output = prettify_xml(xml_root)
+                            output_file_path = os.path.join(output_directory, f"{file_id}.xml")
+                            with open(output_file_path, 'w', encoding='utf-8') as output_xml:
+                                output_xml.write(xml_output)
+    # Process XML files for HTR team data
+    with open(paths["aws"]["output_jsonl"], 'w', encoding='utf-8') as output_1:
+        for filename in os.listdir(paths["aws"]["input_xml"]):
             if filename.endswith(".xml"):
                 file_id = os.path.splitext(filename)[0]
                 image_file_1 = image_files_xml.get(file_id)
                 if image_file_1:
-                    file_path = os.path.join(input_directory_xml, filename)
+                    file_path = os.path.join(paths["aws"]["input_xml"], filename)
                     ocr_data = process_xml_file(file_path)
                     image_metadata_1 = extract_metadata_from_xml(ocr_data, image_file_1)
                     if image_metadata_1:
@@ -127,9 +180,9 @@ def main():
                         xml_root = convert_to_xml(ocr_data, image_metadata_1, "AWS Data",
                                                   "2024-06-10T11:08:30.326+00:00")
                         xml_output = prettify_xml(xml_root)
-                        output_file_path = os.path.join(output_directory_xml, f"{file_id}.xml")
-                        with open(output_file_path, 'w', encoding='utf-8') as output_file_xml:
-                            output_file_xml.write(xml_output)
+                        output_file_path = os.path.join(paths["aws"]["output_xml"], f"{file_id}.xml")
+                        with open(output_file_path, 'w', encoding='utf-8') as output_file_aws:
+                            output_file_aws.write(xml_output)     
 
 
 if __name__ == "__main__":
