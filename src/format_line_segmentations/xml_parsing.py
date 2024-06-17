@@ -23,11 +23,4 @@ def extract_metadata_from_xml(ocr_data, image_file):
     metadata = {}
     metadata['id'] = os.path.splitext(os.path.basename(image_file))[0] + ".jpg_2000x700.jpg"
     metadata['image'] = image_file
-    for item in ocr_data:
-        if isinstance(item, dict):
-            text = item.get('text', '')
-            if 'width' in text.lower():
-                metadata['width'] = text.split(':')[-1].strip()
-            elif 'height' in text.lower():
-                metadata['height'] = text.split(':')[-1].strip()
     return metadata
