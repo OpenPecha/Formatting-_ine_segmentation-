@@ -75,6 +75,29 @@ def prettify_xml(elem):
     reparsed = minidom.parseString(rough_string)
     return reparsed.toprettyxml(indent="  ")
 
+# Process Transkrisbus Data (XML) files for each directory
+def process_xml_files(input_directories,  output_files, output_directories, dataset_name):
+    for input_directory, output_file, output_directory in zip(input_directories, output_files, output_directories):
+        image_files = {os.path.splitext(f)[0]: os.path.join(input_directory, f)
+                       for f in os.listdir(input_directory) if f.lower().endswith(".xml")}
+        with open(output_file, 'w', encoding='utf-8') as output_f:
+            for filename in os.listdir(input_directory):
+                if filename.endswith(".xml"):
+                    file_id = os.path.splitext(filename)[0]
+                    image_file = image_files.get(file_id)
+                    if image_file:
+                        file_path = os.path.join(input_directory, filename)
+                        ocr_data = process_xml_file(file_path)
+                        image_metadata = extract_metadata_from_xml(ocr_data, image_file)
+                        if image_metadata:
+                            jsonl_output = convert_to_jsonl(ocr_data, image_metadata)
+                            output_f.write(jsonl_output + '\n')
+                            xml_root = convert_to_xml(ocr_data, image_metadata, dataset_name, "2024-06-10T11:08:30.326+00:00")
+                            xml_output = prettify_xml(xml_root)
+                            output_file_path = os.path.join(output_directory, f"{file_id}.xml")
+                            with open(output_file_path, 'w', encoding='utf-8') as output_xml:
+                                output_xml.write(xml_output)
+
 # Main function to process HTML and XML files and convert them to JSONL and XML formats.
 def main():
     base_path = '/Users/ogyenthoga/Desktop/Work/Formatting_line_segmentation/data/line_segmentation_inputs/'
@@ -93,10 +116,10 @@ def main():
         },
         "stock_kangyur": {
             "input_xml": [
-                f"{base_path}stock_kangyur/training_validation_set/page",
-                f"{base_path}stock_kangyur/training_data/page",
-                f"{base_path}stock_kangyur/test_data/page",
-                f"{base_path}stock_kangyur/kdsb_test/page"
+                f"{base_path}transkrisbus/stock_kangyur/training_validation_set/page",
+                f"{base_path}transkrisbus/stock_kangyur/training_data/page",
+                f"{base_path}transkrisbus/stock_kangyur/test_data/page",
+                f"{base_path}transkrisbus/stock_kangyur/kdsb_test/page"
             ],
             "output_jsonl": [
                 f"{output_base_path}training_validation_set.jsonl",
@@ -110,7 +133,52 @@ def main():
                 f"{output_base_path}test_data_xml/",
                 f"{output_base_path}kdsb_test_xml/"
             ]
-        }
+        },
+        "tib_school": {
+            "input_xml": [
+                f"{base_path}transkrisbus/tib_school/page_1/page",
+                f"{base_path}transkrisbus/tib_school/page_2/page",
+                f"{base_path}transkrisbus/tib_school/page_3/page",
+                f"{base_path}transkrisbus/tib_school/page_4/page",
+                f"{base_path}transkrisbus/tib_school/page_5/page",
+                f"{base_path}transkrisbus/tib_school/page_6/page",
+                f"{base_path}transkrisbus/tib_school/page_7/page",
+                f"{base_path}transkrisbus/tib_school/page_8/page",
+                f"{base_path}transkrisbus/tib_school/page_9/page",
+                f"{base_path}transkrisbus/tib_school/page_10/page",
+                f"{base_path}transkrisbus/tib_school/page_11/page",
+                f"{base_path}transkrisbus/tib_school/page_12/page"
+            ],
+            "output_jsonl": [
+                f"{output_base_path}page_1.jsonl",
+                f"{output_base_path}page_2.jsonl",
+                f"{output_base_path}page_3.jsonl",
+                f"{output_base_path}page_4.jsonl",
+                f"{output_base_path}page_5.jsonl",
+                f"{output_base_path}page_6.jsonl",
+                f"{output_base_path}page_7.jsonl",
+                f"{output_base_path}page_8.jsonl",
+                f"{output_base_path}page_9.jsonl",
+                f"{output_base_path}page_10.jsonl",
+                f"{output_base_path}page_11.jsonl",
+                f"{output_base_path}page_12.jsonl"
+
+            ],
+            "output_xml": [
+                f"{output_base_path}page_1_xml/",
+                f"{output_base_path}page_2_xml/",
+                f"{output_base_path}page_3_xml/",
+                f"{output_base_path}page_4_xml/",
+                f"{output_base_path}page_5_xml/",
+                f"{output_base_path}page_6_xml/",
+                f"{output_base_path}page_7_xml/",
+                f"{output_base_path}page_8_xml/",
+                f"{output_base_path}page_9_xml/",
+                f"{output_base_path}page_10_xml/",
+                f"{output_base_path}page_11_xml/",
+                f"{output_base_path}page_12_xml/"
+            ]
+        },
     }    
     for output_type in paths.values():
         output_dirs = output_type.get("output_xml", [])
@@ -142,28 +210,18 @@ def main():
                         output_file_path = os.path.join(paths["google_books"]["output_xml"], f"{file_id}.xml")
                         with open(output_file_path, 'w', encoding='utf-8') as output_file_google_books:
                             output_file_google_books.write(xml_output)
-    # Process Stock Kangyur Data (XML) files for each directory
-    for input_directory, output_file, output_directory in zip(paths["stock_kangyur"]["input_xml"], paths["stock_kangyur"]["output_jsonl"], 
-                                                    paths["stock_kangyur"]["output_xml"]):
-        image_files = {os.path.splitext(f)[0]: os.path.join(input_directory, f)
-                       for f in os.listdir(input_directory) if f.lower().endswith(".xml")}
-        with open(output_file, 'w', encoding='utf-8') as output_f:
-            for filename in os.listdir(input_directory):
-                if filename.endswith(".xml"):
-                    file_id = os.path.splitext(filename)[0]
-                    image_file = image_files.get(file_id)
-                    if image_file:
-                        file_path = os.path.join(input_directory, filename)
-                        ocr_data = process_xml_file(file_path)
-                        image_metadata = extract_metadata_from_xml(ocr_data, image_file)
-                        if image_metadata:
-                            jsonl_output = convert_to_jsonl(ocr_data, image_metadata)
-                            output_f.write(jsonl_output + '\n')
-                            xml_root = convert_to_xml(ocr_data, image_metadata, "Transkribus data", "2024-06-10T11:08:30.326+00:00")
-                            xml_output = prettify_xml(xml_root)
-                            output_file_path = os.path.join(output_directory, f"{file_id}.xml")
-                            with open(output_file_path, 'w', encoding='utf-8') as output_xml:
-                                output_xml.write(xml_output)
+    process_xml_files(
+        paths["stock_kangyur"]["input_xml"],
+        paths["stock_kangyur"]["output_jsonl"],
+        paths["stock_kangyur"]["output_xml"],
+        "Transkribus Stock Kangyur"
+        )
+    process_xml_files(
+        paths["tib_school"]["input_xml"],
+        paths["tib_school"]["output_jsonl"],
+        paths["tib_school"]["output_xml"],
+       "Transkribus Tibetan School"
+    )
     # Process XML files for HTR team data
     with open(paths["aws"]["output_jsonl"], 'w', encoding='utf-8') as output_1:
         for filename in os.listdir(paths["aws"]["input_xml"]):
