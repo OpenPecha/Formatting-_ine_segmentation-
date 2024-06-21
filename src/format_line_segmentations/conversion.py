@@ -75,14 +75,45 @@ def prettify_xml(elem):
     reparsed = minidom.parseString(rough_string)
     return reparsed.toprettyxml(indent="  ")
 
+# Create directories if they do not exist.
+def create_directories(paths):
+    for output_type in paths.values():
+        output_dirs = output_type.get("output_xml", [])
+        if isinstance(output_dirs, str):
+            output_dirs = [output_dirs]
+        for output_dir in output_dirs:
+            if not os.path.exists(output_dir):
+                os.makedirs(output_dir)
+
 # Process Transkrisbus Data (XML) files for each directory
-def process_xml_files(input_directories,  output_files, output_directories, dataset_name):
+def get_xml_paths(base_path, output_base_path):
+    input_dirs = []
+    output_jsonls = []
+    output_xmls = []
+    for root, dirs, files in os.walk(base_path):
+        if ('xml' in os.path.basename(root).lower() or 'page' in os.path.basename(root).lower()) and any(file.endswith(".xml") for file in files):
+            input_dirs.append(root)
+            relative_path = os.path.relpath(root, base_path)
+            jsonl_name = relative_path.replace(os.sep, '_') + '.jsonl'
+            xml_dir_name = relative_path.replace(os.sep, '_') + '_xml'
+            output_jsonls.append(os.path.join(output_base_path, jsonl_name))
+            output_xmls.append(os.path.join(output_base_path, xml_dir_name))
+    return input_dirs, output_jsonls, output_xmls
+
+#Process XML files for Transkribus data
+def process_xml_files(input_directories, output_files, output_directories, dataset_name):
     for input_directory, output_file, output_directory in zip(input_directories, output_files, output_directories):
-        image_files = {os.path.splitext(f)[0]: os.path.join(input_directory, f)
-                       for f in os.listdir(input_directory) if f.lower().endswith(".xml")}
+        if not os.path.exists(output_directory):
+            os.makedirs(output_directory)
+        # Filter XML files excluding 'metadata.xml' and 'mets.xml'
+        image_files = {
+            os.path.splitext(f)[0]: os.path.join(input_directory, f)
+            for f in os.listdir(input_directory)
+            if f.lower().endswith(".xml") and not (f.lower().startswith("metadata") or f.lower() == "mets.xml")
+        }
         with open(output_file, 'w', encoding='utf-8') as output_f:
             for filename in os.listdir(input_directory):
-                if filename.endswith(".xml"):
+                if filename.lower().endswith(".xml") and not (filename.lower().startswith("metadata") or filename.lower() == "mets.xml"):
                     file_id = os.path.splitext(filename)[0]
                     image_file = image_files.get(file_id)
                     if image_file:
@@ -98,100 +129,10 @@ def process_xml_files(input_directories,  output_files, output_directories, data
                             with open(output_file_path, 'w', encoding='utf-8') as output_xml:
                                 output_xml.write(xml_output)
 
-# Main function to process HTML and XML files and convert them to JSONL and XML formats.
-def main():
-    base_path = '/Users/ogyenthoga/Desktop/Work/Formatting_line_segmentation/data/line_segmentation_inputs/'
-    output_base_path = '/Users/ogyenthoga/Desktop/Work/Formatting_line_segmentation/data/line_segmentation_output_format/'
-    paths = {
-        "google_books": {
-            "input_html": f"{base_path}google_book_html/",
-            "input_images": f"{base_path}google_book_images/",
-            "output_jsonl": f"{output_base_path}google_books_data.jsonl",
-            "output_xml": f"{output_base_path}google_books_data_xml/"
-        },
-        "aws": {
-            "input_xml": f"{base_path}htr_team/",
-            "output_jsonl": f"{output_base_path}htr_team_data.jsonl",
-            "output_xml": f"{output_base_path}htr_teams_data_xml/"
-        },
-        "stock_kangyur": {
-            "input_xml": [
-                f"{base_path}transkrisbus/stock_kangyur/training_validation_set/page",
-                f"{base_path}transkrisbus/stock_kangyur/training_data/page",
-                f"{base_path}transkrisbus/stock_kangyur/test_data/page",
-                f"{base_path}transkrisbus/stock_kangyur/kdsb_test/page"
-            ],
-            "output_jsonl": [
-                f"{output_base_path}training_validation_set.jsonl",
-                f"{output_base_path}training_data.jsonl",
-                f"{output_base_path}test_data.jsonl",
-                f"{output_base_path}kdsb_test.jsonl"
-            ],
-            "output_xml": [
-                f"{output_base_path}training_validation_set_xml/",
-                f"{output_base_path}training_data_xml/",
-                f"{output_base_path}test_data_xml/",
-                f"{output_base_path}kdsb_test_xml/"
-            ]
-        },
-        "tib_school": {
-            "input_xml": [
-                f"{base_path}transkrisbus/tib_school/page_1/page",
-                f"{base_path}transkrisbus/tib_school/page_2/page",
-                f"{base_path}transkrisbus/tib_school/page_3/page",
-                f"{base_path}transkrisbus/tib_school/page_4/page",
-                f"{base_path}transkrisbus/tib_school/page_5/page",
-                f"{base_path}transkrisbus/tib_school/page_6/page",
-                f"{base_path}transkrisbus/tib_school/page_7/page",
-                f"{base_path}transkrisbus/tib_school/page_8/page",
-                f"{base_path}transkrisbus/tib_school/page_9/page",
-                f"{base_path}transkrisbus/tib_school/page_10/page",
-                f"{base_path}transkrisbus/tib_school/page_11/page",
-                f"{base_path}transkrisbus/tib_school/page_12/page"
-            ],
-            "output_jsonl": [
-                f"{output_base_path}page_1.jsonl",
-                f"{output_base_path}page_2.jsonl",
-                f"{output_base_path}page_3.jsonl",
-                f"{output_base_path}page_4.jsonl",
-                f"{output_base_path}page_5.jsonl",
-                f"{output_base_path}page_6.jsonl",
-                f"{output_base_path}page_7.jsonl",
-                f"{output_base_path}page_8.jsonl",
-                f"{output_base_path}page_9.jsonl",
-                f"{output_base_path}page_10.jsonl",
-                f"{output_base_path}page_11.jsonl",
-                f"{output_base_path}page_12.jsonl"
-
-            ],
-            "output_xml": [
-                f"{output_base_path}page_1_xml/",
-                f"{output_base_path}page_2_xml/",
-                f"{output_base_path}page_3_xml/",
-                f"{output_base_path}page_4_xml/",
-                f"{output_base_path}page_5_xml/",
-                f"{output_base_path}page_6_xml/",
-                f"{output_base_path}page_7_xml/",
-                f"{output_base_path}page_8_xml/",
-                f"{output_base_path}page_9_xml/",
-                f"{output_base_path}page_10_xml/",
-                f"{output_base_path}page_11_xml/",
-                f"{output_base_path}page_12_xml/"
-            ]
-        },
-    }    
-    for output_type in paths.values():
-        output_dirs = output_type.get("output_xml", [])
-        if isinstance(output_dirs, str):
-            output_dirs = [output_dirs]
-        for output_dir in output_dirs:
-            if not os.path.exists(output_dir):
-                os.makedirs(output_dir)
+# Process Google Books Data (HTML) files
+def process_google_books_html_files(paths):
     image_files_html = {os.path.splitext(f)[0]: os.path.join(paths["google_books"]["input_images"], f)
                         for f in os.listdir(paths["google_books"]["input_images"]) if f.lower().endswith(".jpg")}
-    image_files_xml = {os.path.splitext(f)[0]: os.path.join(paths["aws"]["input_xml"], f)
-                       for f in os.listdir(paths["aws"]["input_xml"]) if f.lower().endswith(".jpg")}
-    # Process Google Books Data (HTML) files
     with open(paths["google_books"]["output_jsonl"], 'w', encoding='utf-8') as output_0:
         for filename in os.listdir(paths["google_books"]["input_html"]):
             if filename.endswith(".html"):
@@ -210,19 +151,11 @@ def main():
                         output_file_path = os.path.join(paths["google_books"]["output_xml"], f"{file_id}.xml")
                         with open(output_file_path, 'w', encoding='utf-8') as output_file_google_books:
                             output_file_google_books.write(xml_output)
-    process_xml_files(
-        paths["stock_kangyur"]["input_xml"],
-        paths["stock_kangyur"]["output_jsonl"],
-        paths["stock_kangyur"]["output_xml"],
-        "Transkribus Stock Kangyur"
-        )
-    process_xml_files(
-        paths["tib_school"]["input_xml"],
-        paths["tib_school"]["output_jsonl"],
-        paths["tib_school"]["output_xml"],
-       "Transkribus Tibetan School"
-    )
-    # Process XML files for HTR team data
+
+# Process XML files for HTR team data
+def process_htr_teams_xml_files(paths):
+    image_files_xml = {os.path.splitext(f)[0]: os.path.join(paths["aws"]["input_xml"], f)
+                       for f in os.listdir(paths["aws"]["input_xml"]) if f.lower().endswith(".jpg")}
     with open(paths["aws"]["output_jsonl"], 'w', encoding='utf-8') as output_1:
         for filename in os.listdir(paths["aws"]["input_xml"]):
             if filename.endswith(".xml"):
@@ -240,8 +173,49 @@ def main():
                         xml_output = prettify_xml(xml_root)
                         output_file_path = os.path.join(paths["aws"]["output_xml"], f"{file_id}.xml")
                         with open(output_file_path, 'w', encoding='utf-8') as output_file_aws:
-                            output_file_aws.write(xml_output)     
+                            output_file_aws.write(xml_output)  
 
+# Main function to process HTML and XML files and convert them to JSONL and XML formats.
+def main():
+    base_path = '../../data/line_segmentation_inputs/'
+    output_base_path = '../../data/line_segmentation_output_format/'
+    paths = {
+        "google_books": {
+            "input_html": f"{base_path}google_book_html/",
+            "input_images": f"{base_path}google_book_images/",
+            "output_jsonl": f"{output_base_path}google_books_data.jsonl",
+            "output_xml": f"{output_base_path}google_books_data_xml/"
+        },
+        "aws": {
+            "input_xml": f"{base_path}htr_team/",
+            "output_jsonl": f"{output_base_path}htr_team_data.jsonl",
+            "output_xml": f"{output_base_path}htr_teams_data_xml/"
+        },
+        "transkribus": {
+            "stock_kangyur": {
+                "input_xml_base": f"{base_path}transkrisbus/stock_kangyur/"
+            },
+            "phudrak": {
+                "input_xml_base": f"{base_path}transkrisbus/phudrak/"
+            },
+            "derge_kangyur": {
+                "input_xml_base": f"{base_path}transkrisbus/derge-kangyur/"
+            }
+        }
+    }    
+    create_directories(paths)
+    process_google_books_html_files(paths)
+    transkribus_datasets = {
+        "Transkribus Stock Kangyur": paths["transkribus"]["stock_kangyur"]["input_xml_base"],
+        "Transkribus Phudrak": paths["transkribus"]["phudrak"]["input_xml_base"],
+        "Transkribus Derge Kangyur": paths["transkribus"]["derge_kangyur"]["input_xml_base"]
+    }
+    for dataset_name, input_xml_base in transkribus_datasets.items():
+        input_xml, output_jsonl, output_xml = get_xml_paths(input_xml_base, output_base_path)
+        process_xml_files(input_xml, output_jsonl, output_xml, dataset_name)
+    # Process XML files for HTR team data
+    process_htr_teams_xml_files(paths)
+       
 
 if __name__ == "__main__":
     main()
