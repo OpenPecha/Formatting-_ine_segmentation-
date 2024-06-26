@@ -24,16 +24,12 @@ def convert_to_jsonl(ocr_data, image_metadata):
     combined_output = {
         "id": image_metadata["id"],
         "image": image_metadata["image"],
-        "spans": spans,
-        "_input_hash": -548459323,
-        "_task_hash": -1621366528,
-        "_view_id": "image_manual",
-        "answer": "accept"
+        "spans": spans
     }
     return json.dumps(combined_output, ensure_ascii=False)
 
 #Convert OCR data and image metadata to an XML format.
-def convert_to_xml(ocr_data, image_metadata, creator_name, created_time):
+def convert_to_xml(ocr_data, image_metadata, creator_name):
     root = ET.Element("PcGts", {
         "xmlns": "http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15",
         "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
@@ -42,13 +38,6 @@ def convert_to_xml(ocr_data, image_metadata, creator_name, created_time):
     metadata = ET.SubElement(root, "Metadata")
     creator = ET.SubElement(metadata, "Creator")
     creator.text = creator_name
-    created = ET.SubElement(metadata, "Created")
-    created.text = created_time
-    now_last_changed = datetime.now()
-    formatted_now_last_changed = now_last_changed.strftime('%Y-%m-%dT%H:%M:%S.%f%z')
-    formatted_now_last_changed = formatted_now_last_changed[:-3] + "+00:00"
-    last_changed = ET.SubElement(metadata, "LastChanged")
-    last_changed.text = formatted_now_last_changed
     page = ET.SubElement(root, "Page", {
         "imageFilename": image_metadata["id"],
     })
@@ -145,8 +134,7 @@ def process_google_books_html_files(paths):
                     if ocr_data and image_metadata_0:
                         jsonl_output = convert_to_jsonl(ocr_data, image_metadata_0)
                         output_0 .write(jsonl_output + '\n')
-                        xml_root = convert_to_xml(ocr_data, image_metadata_0, "Google Books",
-                                                  "2024-06-10T11:08:30.326+00:00")
+                        xml_root = convert_to_xml(ocr_data, image_metadata_0, "Google Books")
                         xml_output = prettify_xml(xml_root)
                         output_file_path = os.path.join(paths["google_books"]["output_xml"], f"{file_id}.xml")
                         with open(output_file_path, 'w', encoding='utf-8') as output_file_google_books:
@@ -180,9 +168,9 @@ def main():
     base_path = '../../data/line_segmentation_inputs/'
     output_base_path = '../../data/line_segmentation_output_format/'
     paths = {
-        "google_books": {
-            "input_html": f"{base_path}google_book_html/",
-            "input_images": f"{base_path}google_book_images/",
+           "google_books": {
+            "input_html": f"{base_path}google_books/google_books_html_folder/",
+            "input_images": f"{base_path}google_books/google_books_images_folder/",
             "output_jsonl": f"{output_base_path}google_books_data.jsonl",
             "output_xml": f"{output_base_path}google_books_data_xml/"
         },
@@ -192,30 +180,34 @@ def main():
             "output_xml": f"{output_base_path}htr_teams_data_xml/"
         },
         "transkribus": {
-            "stock_kangyur": {
-                "input_xml_base": f"{base_path}transkrisbus/stock_kangyur/"
+            "stok_kangyur": {
+                "input_xml_base": f"{base_path}transkrisbus/stok_kangyur/"
             },
             "phudrak": {
                 "input_xml_base": f"{base_path}transkrisbus/phudrak/"
             },
             "derge_kangyur": {
                 "input_xml_base": f"{base_path}transkrisbus/derge-kangyur/"
-            }
+            },
+            "tib_school": {
+                "input_xml_base": f"{base_path}transkrisbus/tib_school/"
+            }   
         }
     }    
     create_directories(paths)
     process_google_books_html_files(paths)
     transkribus_datasets = {
-        "Transkribus Stock Kangyur": paths["transkribus"]["stock_kangyur"]["input_xml_base"],
+        "Transkribus Stok Kangyur": paths["transkribus"]["stok_kangyur"]["input_xml_base"],
         "Transkribus Phudrak": paths["transkribus"]["phudrak"]["input_xml_base"],
-        "Transkribus Derge Kangyur": paths["transkribus"]["derge_kangyur"]["input_xml_base"]
+        "Transkribus Derge Kangyur": paths["transkribus"]["derge_kangyur"]["input_xml_base"],
+        "Transkribus Derge Kangyur": paths["transkribus"]["tib_school"]["input_xml_base"]
     }
     for dataset_name, input_xml_base in transkribus_datasets.items():
         input_xml, output_jsonl, output_xml = get_xml_paths(input_xml_base, output_base_path)
         process_xml_files(input_xml, output_jsonl, output_xml, dataset_name)
     # Process XML files for HTR team data
     process_htr_teams_xml_files(paths)
-       
+      
 
 if __name__ == "__main__":
     main()
