@@ -21,6 +21,6 @@ def process_html_file(file_path):
 def extract_metadata_from_html(parsed_data, image_file):
     metadata = {}
     # Extract ID from the image filename
-    metadata['id'] = os.path.splitext(os.path.basename(image_file))[0] + ".jpg_2000x700.jpg"
+    metadata['id'] = os.path.splitext(os.path.basename(image_file))[0] + ".jpg"
     metadata['image'] = image_file
     return metadata
