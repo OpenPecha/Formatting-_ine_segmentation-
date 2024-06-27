@@ -18,7 +18,7 @@ def process_xml_file(file_path):
         print(f"Error processing {file_path}: {e}")
         return []
 
-#Extract metadata from parsed OCR data and the image file.
+#Extract metadata from parsed OCR data and the image file.  
 def extract_metadata_from_xml(ocr_data, image_file):
     metadata = {}
     metadata['id'] = os.path.splitext(os.path.basename(image_file))[0] + ".jpg"
