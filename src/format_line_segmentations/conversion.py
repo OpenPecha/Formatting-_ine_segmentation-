@@ -142,8 +142,8 @@ def process_google_books_html_files(paths):
 
 # Process XML files for HTR team data
 def process_htr_teams_xml_files(paths):
-    image_files_xml = {os.path.splitext(f)[0]: os.path.join(paths["aws"]["input_xml"], f)
-                       for f in os.listdir(paths["aws"]["input_xml"]) if f.lower().endswith(".jpg")}
+    image_files_xml = {os.path.splitext(f)[0]: os.path.join(paths["aws"]["input_images"], f)
+                       for f in os.listdir(paths["aws"]["input_images"]) if f.lower().endswith(".jpg")}
     with open(paths["aws"]["output_jsonl"], 'w', encoding='utf-8') as output_1:
         for filename in os.listdir(paths["aws"]["input_xml"]):
             if filename.endswith(".xml"):
@@ -153,11 +153,10 @@ def process_htr_teams_xml_files(paths):
                     file_path = os.path.join(paths["aws"]["input_xml"], filename)
                     ocr_data = process_xml_file(file_path)
                     image_metadata_1 = extract_metadata_from_xml(ocr_data, image_file_1)
-                    if image_metadata_1:
+                    if ocr_data and image_metadata_1:
                         jsonl_output = convert_to_jsonl(ocr_data, image_metadata_1)
                         output_1.write(jsonl_output + '\n')
-                        xml_root = convert_to_xml(ocr_data, image_metadata_1, "AWS Data",
-                                                  "2024-06-10T11:08:30.326+00:00")
+                        xml_root = convert_to_xml(ocr_data, image_metadata_1, "HTR Team")
                         xml_output = prettify_xml(xml_root)
                         output_file_path = os.path.join(paths["aws"]["output_xml"], f"{file_id}.xml")
                         with open(output_file_path, 'w', encoding='utf-8') as output_file_aws:
@@ -168,16 +167,17 @@ def main():
     base_path = '../../data/line_segmentation_inputs/'
     output_base_path = '../../data/line_segmentation_output_format/'
     paths = {
-           "google_books": {
+        "aws": {
+            "input_xml": f"{base_path}htr_teams/htr_team_xml_folder",
+            "input_images": f"{base_path}htr_teams/htr_team_images_folder/",
+            "output_jsonl": f"{output_base_path}htr_team_data.jsonl",
+            "output_xml": f"{output_base_path}htr_teams_data_xml/"
+        },
+        "google_books": {
             "input_html": f"{base_path}google_books/google_books_html_folder/",
             "input_images": f"{base_path}google_books/google_books_images_folder/",
             "output_jsonl": f"{output_base_path}google_books_data.jsonl",
             "output_xml": f"{output_base_path}google_books_data_xml/"
-        },
-        "aws": {
-            "input_xml": f"{base_path}htr_team/",
-            "output_jsonl": f"{output_base_path}htr_team_data.jsonl",
-            "output_xml": f"{output_base_path}htr_teams_data_xml/"
         },
         "transkribus": {
             "stok_kangyur": {
@@ -192,9 +192,10 @@ def main():
             "tib_school": {
                 "input_xml_base": f"{base_path}transkrisbus/tib_school/"
             }   
-        }
-    }    
+        } 
+    }   
     create_directories(paths)
+    # Process Html files for Google Books data
     process_google_books_html_files(paths)
     transkribus_datasets = {
         "Transkribus Stok Kangyur": paths["transkribus"]["stok_kangyur"]["input_xml_base"],
@@ -204,7 +205,7 @@ def main():
     }
     for dataset_name, input_xml_base in transkribus_datasets.items():
         input_xml, output_jsonl, output_xml = get_xml_paths(input_xml_base, output_base_path)
-        process_xml_files(input_xml, output_jsonl, output_xml, dataset_name)
+        process_xml_files(input_xml, output_jsonl, output_xml, dataset_name) # Process XML files for Transkribus data
     # Process XML files for HTR team data
     process_htr_teams_xml_files(paths)
       
