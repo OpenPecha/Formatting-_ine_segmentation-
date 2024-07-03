@@ -74,50 +74,6 @@ def create_directories(paths):
             if not os.path.exists(output_dir):
                 os.makedirs(output_dir)
 
-# Process Transkrisbus Data (XML) files for each directory
-def get_xml_paths(base_path, output_base_path):
-    input_dirs = []
-    output_jsonls = []
-    output_xmls = []
-    for root, dirs, files in os.walk(base_path):
-        if ('xml' in os.path.basename(root).lower() or 'page' in os.path.basename(root).lower()) and any(file.endswith(".xml") for file in files):
-            input_dirs.append(root)
-            relative_path = os.path.relpath(root, base_path)
-            jsonl_name = relative_path.replace(os.sep, '_') + '.jsonl'
-            xml_dir_name = relative_path.replace(os.sep, '_') + '_xml'
-            output_jsonls.append(os.path.join(output_base_path, jsonl_name))
-            output_xmls.append(os.path.join(output_base_path, xml_dir_name))
-    return input_dirs, output_jsonls, output_xmls
-
-#Process XML files for Transkribus data
-def process_xml_files(input_directories, output_files, output_directories, dataset_name):
-    for input_directory, output_file, output_directory in zip(input_directories, output_files, output_directories):
-        if not os.path.exists(output_directory):
-            os.makedirs(output_directory)
-        # Filter XML files excluding 'metadata.xml' and 'mets.xml'
-        image_files = {
-            os.path.splitext(f)[0]: os.path.join(input_directory, f)
-            for f in os.listdir(input_directory)
-            if f.lower().endswith(".xml") and not (f.lower().startswith("metadata") or f.lower() == "mets.xml")
-        }
-        with open(output_file, 'w', encoding='utf-8') as output_f:
-            for filename in os.listdir(input_directory):
-                if filename.lower().endswith(".xml") and not (filename.lower().startswith("metadata") or filename.lower() == "mets.xml"):
-                    file_id = os.path.splitext(filename)[0]
-                    image_file = image_files.get(file_id)
-                    if image_file:
-                        file_path = os.path.join(input_directory, filename)
-                        ocr_data = process_xml_file(file_path)
-                        image_metadata = extract_metadata_from_xml(ocr_data, image_file)
-                        if image_metadata:
-                            jsonl_output = convert_to_jsonl(ocr_data, image_metadata)
-                            output_f.write(jsonl_output + '\n')
-                            xml_root = convert_to_xml(ocr_data, image_metadata, dataset_name, "2024-06-10T11:08:30.326+00:00")
-                            xml_output = prettify_xml(xml_root)
-                            output_file_path = os.path.join(output_directory, f"{file_id}.xml")
-                            with open(output_file_path, 'w', encoding='utf-8') as output_xml:
-                                output_xml.write(xml_output)
-
 # Process Google Books Data (HTML) files
 def process_google_books_html_files(paths):
     image_files_html = {os.path.splitext(f)[0]: os.path.join(paths["google_books"]["input_images"], f)
@@ -140,27 +96,34 @@ def process_google_books_html_files(paths):
                         with open(output_file_path, 'w', encoding='utf-8') as output_file_google_books:
                             output_file_google_books.write(xml_output)
 
-# Process XML files for HTR team data
-def process_htr_teams_xml_files(paths):
-    image_files_xml = {os.path.splitext(f)[0]: os.path.join(paths["aws"]["input_images"], f)
-                       for f in os.listdir(paths["aws"]["input_images"]) if f.lower().endswith(".jpg")}
-    with open(paths["aws"]["output_jsonl"], 'w', encoding='utf-8') as output_1:
-        for filename in os.listdir(paths["aws"]["input_xml"]):
-            if filename.endswith(".xml"):
-                file_id = os.path.splitext(filename)[0]
-                image_file_1 = image_files_xml.get(file_id)
-                if image_file_1:
-                    file_path = os.path.join(paths["aws"]["input_xml"], filename)
-                    ocr_data = process_xml_file(file_path)
-                    image_metadata_1 = extract_metadata_from_xml(ocr_data, image_file_1)
-                    if ocr_data and image_metadata_1:
-                        jsonl_output = convert_to_jsonl(ocr_data, image_metadata_1)
-                        output_1.write(jsonl_output + '\n')
-                        xml_root = convert_to_xml(ocr_data, image_metadata_1, "HTR Team")
-                        xml_output = prettify_xml(xml_root)
-                        output_file_path = os.path.join(paths["aws"]["output_xml"], f"{file_id}.xml")
-                        with open(output_file_path, 'w', encoding='utf-8') as output_file_aws:
-                            output_file_aws.write(xml_output)  
+# Process XML files for Transkribus and HTR team data
+def process_xml_data(paths):
+    for dataset, dataset_paths in paths.items():
+        if dataset == "transkribus":
+            image_files = {os.path.splitext(f)[0]: os.path.join(dataset_paths["input_images"], f)
+                           for f in os.listdir(dataset_paths["input_images"]) if f.lower().endswith(".jpg")}
+        elif dataset == "aws":
+            image_files = {os.path.splitext(f)[0]: os.path.join(dataset_paths["input_images"], f)
+                           for f in os.listdir(dataset_paths["input_images"]) if f.lower().endswith(".jpg")}
+        else:
+            continue
+        with open(dataset_paths["output_jsonl"], 'w', encoding='utf-8') as output_jsonl:
+            for filename in os.listdir(dataset_paths["input_xml_base"]):
+                if filename.endswith(".xml"):
+                    file_id = os.path.splitext(filename)[0]
+                    image_file = image_files.get(file_id)
+                    if image_file:
+                        file_path = os.path.join(dataset_paths["input_xml_base"], filename)
+                        ocr_data = process_xml_file(file_path)
+                        image_metadata = extract_metadata_from_xml(ocr_data, image_file)
+                        if ocr_data and image_metadata:
+                            jsonl_output = convert_to_jsonl(ocr_data, image_metadata)
+                            output_jsonl.write(jsonl_output + '\n')
+                            xml_root = convert_to_xml(ocr_data, image_metadata, dataset.capitalize())
+                            xml_output = prettify_xml(xml_root)
+                            output_file_path = os.path.join(dataset_paths["output_xml"], f"{file_id}.xml")
+                            with open(output_file_path, 'w', encoding='utf-8') as output_xml:
+                                output_xml.write(xml_output)
 
 # Main function to process HTML and XML files and convert them to JSONL and XML formats.
 def main():
@@ -178,37 +141,19 @@ def main():
             "input_images": f"{base_path}google_books/google_books_images_folder/",
             "output_jsonl": f"{output_base_path}google_books_data.jsonl",
             "output_xml": f"{output_base_path}google_books_data_xml/"
-        },
+        }, 
         "transkribus": {
-            "stok_kangyur": {
-                "input_xml_base": f"{base_path}transkrisbus/stok_kangyur/"
-            },
-            "phudrak": {
-                "input_xml_base": f"{base_path}transkrisbus/phudrak/"
-            },
-            "derge_kangyur": {
-                "input_xml_base": f"{base_path}transkrisbus/derge-kangyur/"
-            },
-            "tib_school": {
-                "input_xml_base": f"{base_path}transkrisbus/tib_school/"
-            }   
-        } 
+            "input_xml_base": f"{base_path}transkribus/",
+            "input_images": f"{base_path}transkribus_images_folder/",
+            "output_jsonl": f"{output_base_path}transkribus_data.jsonl",
+            "output_xml": f"{output_base_path}transkribus_data_xml/"
+        }
     }   
     create_directories(paths)
     # Process Html files for Google Books data
     process_google_books_html_files(paths)
-    transkribus_datasets = {
-        "Transkribus Stok Kangyur": paths["transkribus"]["stok_kangyur"]["input_xml_base"],
-        "Transkribus Phudrak": paths["transkribus"]["phudrak"]["input_xml_base"],
-        "Transkribus Derge Kangyur": paths["transkribus"]["derge_kangyur"]["input_xml_base"],
-        "Transkribus Derge Kangyur": paths["transkribus"]["tib_school"]["input_xml_base"]
-    }
-    for dataset_name, input_xml_base in transkribus_datasets.items():
-        input_xml, output_jsonl, output_xml = get_xml_paths(input_xml_base, output_base_path)
-        process_xml_files(input_xml, output_jsonl, output_xml, dataset_name) # Process XML files for Transkribus data
-    # Process XML files for HTR team data
-    process_htr_teams_xml_files(paths)
+    # Process XML files for Tanskribus and HTR team data
+    process_xml_data(paths)
       
-
 if __name__ == "__main__":
     main()
