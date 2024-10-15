@@ -2,9 +2,9 @@ import os
 import shutil
 from PIL import Image
 
-ROOT_DIR = '/Users/ogyenthoga/Desktop/Work/Formatting_line_segmentation/data/extracted_data'
-HTML_DEST_DIR = '/Users/ogyenthoga/Desktop/Work/Formatting_line_segmentation/data/google_books_html_folder'
-IMAGES_DEST_DIR = '/Users/ogyenthoga/Desktop/Work/Formatting_line_segmentation/data/google_books_images_folder'
+ROOT_DIR = '../../data/extracted_data'
+HTML_DEST_DIR = '../../data/google_books_html_folder'
+IMAGES_DEST_DIR = '../../data/google_books_images_folder'
 
 def convert_tiff_to_jpg(src_path, dest_path):
     with Image.open(src_path) as img:
@@ -53,7 +53,6 @@ def main():
         os.makedirs(HTML_DEST_DIR)
     if not os.path.exists(IMAGES_DEST_DIR):
         os.makedirs(IMAGES_DEST_DIR)
-
     folder_b_count = 0
     for folder_b in os.listdir(ROOT_DIR):
         folder_b_path = os.path.join(ROOT_DIR, folder_b)

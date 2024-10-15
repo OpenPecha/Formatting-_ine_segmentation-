@@ -1,7 +1,6 @@
 import os
 import zipfile
 
-
 def extract_zip(zip_path, extract_to):
     """
     Extracts a ZIP file to a specified location.
@@ -9,12 +8,12 @@ def extract_zip(zip_path, extract_to):
     with zipfile.ZipFile(zip_path, "r") as zip_ref:
         zip_ref.extractall(extract_to)
 
-
 def find_and_extract_zip(root_path, output_path):
     """
     Recursively finds ZIP files in the given directory and subdirectories,
     and extracts them.
     """
+    count =0 
     for root, dirs, files in os.walk(root_path):
         for filename in files:
             if filename.endswith(".zip"):
@@ -33,7 +32,8 @@ def find_and_extract_zip(root_path, output_path):
                 find_and_extract_zip(
                     extract_to, extract_to
                 )  # Adjusted to use extract_to for both parameters
-
+                count=count+1
+    print(count)
 
 if __name__ == "__main__":
     root_path = "../../data/tib_school_zip"

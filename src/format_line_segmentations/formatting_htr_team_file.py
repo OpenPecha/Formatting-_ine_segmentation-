@@ -2,9 +2,9 @@ import os
 import shutil
 from PIL import Image
 
-ROOT_DIR = '/Users/ogyenthoga/Desktop/Work/Formatting_line_segmentation/data/htr_team_data'
-XML_DEST_DIR = '/Users/ogyenthoga/Desktop/Work/Formatting_line_segmentation/data/htr_teams/htr_team_xml_folder'
-IMAGES_DEST_DIR = '/Users/ogyenthoga/Desktop/Work/Formatting_line_segmentation/data/htr_teams/htr_team_images_folder'
+ROOT_DIR = '../../data/htr_team_data'
+XML_DEST_DIR = '../../data/htr_teams/htr_team_xml_folder'
+IMAGES_DEST_DIR = '../../data/htr_teams/htr_team_images_folder'
 
 def convert_to_jpg(src_path, dest_path):
     with Image.open(src_path) as img:
@@ -39,7 +39,6 @@ def main():
         os.makedirs(XML_DEST_DIR)
     if not os.path.exists(IMAGES_DEST_DIR):
         os.makedirs(IMAGES_DEST_DIR)
-
     folder_b_count = 0
     for folder_b in os.listdir(ROOT_DIR):
         folder_b_path = os.path.join(ROOT_DIR, folder_b)
