@@ -108,12 +108,12 @@ def process_xml_data(paths):
         else:
             continue
         with open(dataset_paths["output_jsonl"], 'w', encoding='utf-8') as output_jsonl:
-            for filename in os.listdir(dataset_paths["input_xml_base"]):
+            for filename in os.listdir(dataset_paths["input_xml"]):
                 if filename.endswith(".xml"):
                     file_id = os.path.splitext(filename)[0]
                     image_file = image_files.get(file_id)
                     if image_file:
-                        file_path = os.path.join(dataset_paths["input_xml_base"], filename)
+                        file_path = os.path.join(dataset_paths["input_xml"], filename)
                         ocr_data = process_xml_file(file_path)
                         image_metadata = extract_metadata_from_xml(ocr_data, image_file)
                         if ocr_data and image_metadata:
@@ -129,7 +129,7 @@ def process_xml_data(paths):
 def main():
     base_path = '../../data/line_segmentation_inputs/'
     output_base_path = '../../data/line_segmentation_output_format/'
-    paths = {
+    '''    paths = {
         "aws": {
             "input_xml": f"{base_path}htr_teams/htr_team_xml_folder",
             "input_images": f"{base_path}htr_teams/htr_team_images_folder/",
@@ -148,10 +148,19 @@ def main():
             "output_jsonl": f"{output_base_path}transkribus_data.jsonl",
             "output_xml": f"{output_base_path}transkribus_data_xml/"
         }
-    }   
+    } '''  
+
+    paths = {
+        "aws": {
+            "input_xml": f"{base_path}htr_teams/htr_team_xml_folder",
+            "input_images": f"{base_path}htr_teams/htr_team_images_folder/",
+            "output_jsonl": f"{output_base_path}htr_team_data.jsonl",
+            "output_xml": f"{output_base_path}htr_teams_data_xml/"
+        }
+    }
     create_directories(paths)
     # Process Html files for Google Books data
-    process_google_books_html_files(paths)
+   # process_google_books_html_files(paths)
     # Process XML files for Tanskribus and HTR team data
     process_xml_data(paths)
       

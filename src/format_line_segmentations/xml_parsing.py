@@ -21,6 +21,6 @@ def process_xml_file(file_path):
 #Extract metadata from parsed OCR data and the image file.  
 def extract_metadata_from_xml(ocr_data, image_file):
     metadata = {}
-    metadata['id'] = os.path.splitext(os.path.basename(image_file))[0] + ".jpg"
+    metadata['id'] =os.path.splitext(os.path.basename(image_file))[0] + ".jpg"
     metadata['image'] = image_file
     return metadata
